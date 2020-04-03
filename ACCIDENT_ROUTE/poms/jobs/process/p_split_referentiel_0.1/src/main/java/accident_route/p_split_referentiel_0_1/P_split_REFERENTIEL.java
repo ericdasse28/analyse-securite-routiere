@@ -378,10 +378,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_loc;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_loc() {
+			return this.Code_loc;
 		}
 
 		public String Nom;
@@ -430,7 +430,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_loc = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -452,7 +452,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_loc, dos);
 
 				// String
 
@@ -470,7 +470,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_loc=" + Code_loc);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -520,10 +520,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_atm;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_atm() {
+			return this.Code_atm;
 		}
 
 		public String Nom;
@@ -572,7 +572,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_atm = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -594,7 +594,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_atm, dos);
 
 				// String
 
@@ -612,7 +612,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_atm=" + Code_atm);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -662,10 +662,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_catr;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_catr() {
+			return this.Code_catr;
 		}
 
 		public String Nom;
@@ -714,7 +714,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_catr = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -736,7 +736,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_catr, dos);
 
 				// String
 
@@ -754,7 +754,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_catr=" + Code_catr);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -804,10 +804,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_catv;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_catv() {
+			return this.Code_catv;
 		}
 
 		public String Nom;
@@ -856,7 +856,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_catv = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -878,7 +878,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_catv, dos);
 
 				// String
 
@@ -896,7 +896,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_catv=" + Code_catv);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -946,10 +946,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_manv;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_manv() {
+			return this.Code_manv;
 		}
 
 		public String Nom;
@@ -998,7 +998,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_manv = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -1020,7 +1020,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_manv, dos);
 
 				// String
 
@@ -1038,7 +1038,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_manv=" + Code_manv);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -1088,10 +1088,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_catu;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_catu() {
+			return this.Code_catu;
 		}
 
 		public String Nom;
@@ -1140,7 +1140,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_catu = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -1162,7 +1162,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_catu, dos);
 
 				// String
 
@@ -1180,7 +1180,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_catu=" + Code_catu);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -1230,10 +1230,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_grav;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_grav() {
+			return this.Code_grav;
 		}
 
 		public String Nom;
@@ -1282,7 +1282,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_grav = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -1304,7 +1304,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_grav, dos);
 
 				// String
 
@@ -1322,7 +1322,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_grav=" + Code_grav);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -1372,10 +1372,10 @@ public class P_split_REFERENTIEL implements TalendJob {
 			return this.codage;
 		}
 
-		public String Code;
+		public String Code_trajet;
 
-		public String getCode() {
-			return this.Code;
+		public String getCode_trajet() {
+			return this.Code_trajet;
 		}
 
 		public String Nom;
@@ -1424,7 +1424,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 					this.codage = readString(dis);
 
-					this.Code = readString(dis);
+					this.Code_trajet = readString(dis);
 
 					this.Nom = readString(dis);
 
@@ -1446,7 +1446,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 				// String
 
-				writeString(this.Code, dos);
+				writeString(this.Code_trajet, dos);
 
 				// String
 
@@ -1464,7 +1464,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("codage=" + codage);
-			sb.append(",Code=" + Code);
+			sb.append(",Code_trajet=" + Code_trajet);
 			sb.append(",Nom=" + Nom);
 			sb.append("]");
 
@@ -1765,9 +1765,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_1 = true;
 				java.io.File filetFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
 				globalMap.put("tFileOutputDelimited_1_FILE_NAME", fileName_tFileOutputDelimited_1);
-				if (filetFileOutputDelimited_1.exists()) {
-					isFileGenerated_tFileOutputDelimited_1 = false;
-				}
 				int nb_line_tFileOutputDelimited_1 = 0;
 				int splitedFileNo_tFileOutputDelimited_1 = 0;
 				int currentRow_tFileOutputDelimited_1 = 0;
@@ -1794,12 +1791,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_1 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
+				if (fileToDelete_tFileOutputDelimited_1.exists()) {
+					fileToDelete_tFileOutputDelimited_1.delete();
+				}
 				outtFileOutputDelimited_1 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_1.length() == 0) {
 					outtFileOutputDelimited_1.write("codage");
 					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-					outtFileOutputDelimited_1.write("Code");
+					outtFileOutputDelimited_1.write("Code_loc");
 					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
 					outtFileOutputDelimited_1.write("Nom");
 					outtFileOutputDelimited_1.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
@@ -1863,9 +1864,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_2 = true;
 				java.io.File filetFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
 				globalMap.put("tFileOutputDelimited_2_FILE_NAME", fileName_tFileOutputDelimited_2);
-				if (filetFileOutputDelimited_2.exists()) {
-					isFileGenerated_tFileOutputDelimited_2 = false;
-				}
 				int nb_line_tFileOutputDelimited_2 = 0;
 				int splitedFileNo_tFileOutputDelimited_2 = 0;
 				int currentRow_tFileOutputDelimited_2 = 0;
@@ -1892,12 +1890,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_2 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
+				if (fileToDelete_tFileOutputDelimited_2.exists()) {
+					fileToDelete_tFileOutputDelimited_2.delete();
+				}
 				outtFileOutputDelimited_2 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_2.length() == 0) {
 					outtFileOutputDelimited_2.write("codage");
 					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("Code");
+					outtFileOutputDelimited_2.write("Code_atm");
 					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
 					outtFileOutputDelimited_2.write("Nom");
 					outtFileOutputDelimited_2.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
@@ -1961,9 +1963,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_3 = true;
 				java.io.File filetFileOutputDelimited_3 = new java.io.File(fileName_tFileOutputDelimited_3);
 				globalMap.put("tFileOutputDelimited_3_FILE_NAME", fileName_tFileOutputDelimited_3);
-				if (filetFileOutputDelimited_3.exists()) {
-					isFileGenerated_tFileOutputDelimited_3 = false;
-				}
 				int nb_line_tFileOutputDelimited_3 = 0;
 				int splitedFileNo_tFileOutputDelimited_3 = 0;
 				int currentRow_tFileOutputDelimited_3 = 0;
@@ -1990,12 +1989,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_3 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_3 = new java.io.File(fileName_tFileOutputDelimited_3);
+				if (fileToDelete_tFileOutputDelimited_3.exists()) {
+					fileToDelete_tFileOutputDelimited_3.delete();
+				}
 				outtFileOutputDelimited_3 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_3, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_3, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_3.length() == 0) {
 					outtFileOutputDelimited_3.write("codage");
 					outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-					outtFileOutputDelimited_3.write("Code");
+					outtFileOutputDelimited_3.write("Code_catr");
 					outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
 					outtFileOutputDelimited_3.write("Nom");
 					outtFileOutputDelimited_3.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
@@ -2059,9 +2062,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_4 = true;
 				java.io.File filetFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
 				globalMap.put("tFileOutputDelimited_4_FILE_NAME", fileName_tFileOutputDelimited_4);
-				if (filetFileOutputDelimited_4.exists()) {
-					isFileGenerated_tFileOutputDelimited_4 = false;
-				}
 				int nb_line_tFileOutputDelimited_4 = 0;
 				int splitedFileNo_tFileOutputDelimited_4 = 0;
 				int currentRow_tFileOutputDelimited_4 = 0;
@@ -2088,12 +2088,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_4 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+				if (fileToDelete_tFileOutputDelimited_4.exists()) {
+					fileToDelete_tFileOutputDelimited_4.delete();
+				}
 				outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_4.length() == 0) {
 					outtFileOutputDelimited_4.write("codage");
 					outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
-					outtFileOutputDelimited_4.write("Code");
+					outtFileOutputDelimited_4.write("Code_catv");
 					outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
 					outtFileOutputDelimited_4.write("Nom");
 					outtFileOutputDelimited_4.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
@@ -2157,9 +2161,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_5 = true;
 				java.io.File filetFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
 				globalMap.put("tFileOutputDelimited_5_FILE_NAME", fileName_tFileOutputDelimited_5);
-				if (filetFileOutputDelimited_5.exists()) {
-					isFileGenerated_tFileOutputDelimited_5 = false;
-				}
 				int nb_line_tFileOutputDelimited_5 = 0;
 				int splitedFileNo_tFileOutputDelimited_5 = 0;
 				int currentRow_tFileOutputDelimited_5 = 0;
@@ -2186,12 +2187,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_5 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
+				if (fileToDelete_tFileOutputDelimited_5.exists()) {
+					fileToDelete_tFileOutputDelimited_5.delete();
+				}
 				outtFileOutputDelimited_5 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_5.length() == 0) {
 					outtFileOutputDelimited_5.write("codage");
 					outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
-					outtFileOutputDelimited_5.write("Code");
+					outtFileOutputDelimited_5.write("Code_manv");
 					outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
 					outtFileOutputDelimited_5.write("Nom");
 					outtFileOutputDelimited_5.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
@@ -2255,9 +2260,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_6 = true;
 				java.io.File filetFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
 				globalMap.put("tFileOutputDelimited_6_FILE_NAME", fileName_tFileOutputDelimited_6);
-				if (filetFileOutputDelimited_6.exists()) {
-					isFileGenerated_tFileOutputDelimited_6 = false;
-				}
 				int nb_line_tFileOutputDelimited_6 = 0;
 				int splitedFileNo_tFileOutputDelimited_6 = 0;
 				int currentRow_tFileOutputDelimited_6 = 0;
@@ -2284,12 +2286,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_6 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
+				if (fileToDelete_tFileOutputDelimited_6.exists()) {
+					fileToDelete_tFileOutputDelimited_6.delete();
+				}
 				outtFileOutputDelimited_6 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_6.length() == 0) {
 					outtFileOutputDelimited_6.write("codage");
 					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
-					outtFileOutputDelimited_6.write("Code");
+					outtFileOutputDelimited_6.write("Code_catu");
 					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
 					outtFileOutputDelimited_6.write("Nom");
 					outtFileOutputDelimited_6.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
@@ -2353,9 +2359,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_7 = true;
 				java.io.File filetFileOutputDelimited_7 = new java.io.File(fileName_tFileOutputDelimited_7);
 				globalMap.put("tFileOutputDelimited_7_FILE_NAME", fileName_tFileOutputDelimited_7);
-				if (filetFileOutputDelimited_7.exists()) {
-					isFileGenerated_tFileOutputDelimited_7 = false;
-				}
 				int nb_line_tFileOutputDelimited_7 = 0;
 				int splitedFileNo_tFileOutputDelimited_7 = 0;
 				int currentRow_tFileOutputDelimited_7 = 0;
@@ -2382,12 +2385,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_7 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_7 = new java.io.File(fileName_tFileOutputDelimited_7);
+				if (fileToDelete_tFileOutputDelimited_7.exists()) {
+					fileToDelete_tFileOutputDelimited_7.delete();
+				}
 				outtFileOutputDelimited_7 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_7, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_7, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_7.length() == 0) {
 					outtFileOutputDelimited_7.write("codage");
 					outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
-					outtFileOutputDelimited_7.write("Code");
+					outtFileOutputDelimited_7.write("Code_grav");
 					outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
 					outtFileOutputDelimited_7.write("Nom");
 					outtFileOutputDelimited_7.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_7);
@@ -2451,9 +2458,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_8 = true;
 				java.io.File filetFileOutputDelimited_8 = new java.io.File(fileName_tFileOutputDelimited_8);
 				globalMap.put("tFileOutputDelimited_8_FILE_NAME", fileName_tFileOutputDelimited_8);
-				if (filetFileOutputDelimited_8.exists()) {
-					isFileGenerated_tFileOutputDelimited_8 = false;
-				}
 				int nb_line_tFileOutputDelimited_8 = 0;
 				int splitedFileNo_tFileOutputDelimited_8 = 0;
 				int currentRow_tFileOutputDelimited_8 = 0;
@@ -2480,12 +2484,16 @@ public class P_split_REFERENTIEL implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_8 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_8 = new java.io.File(fileName_tFileOutputDelimited_8);
+				if (fileToDelete_tFileOutputDelimited_8.exists()) {
+					fileToDelete_tFileOutputDelimited_8.delete();
+				}
 				outtFileOutputDelimited_8 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_8, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_8, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_8.length() == 0) {
 					outtFileOutputDelimited_8.write("codage");
 					outtFileOutputDelimited_8.write(OUT_DELIM_tFileOutputDelimited_8);
-					outtFileOutputDelimited_8.write("Code");
+					outtFileOutputDelimited_8.write("Code_trajet");
 					outtFileOutputDelimited_8.write(OUT_DELIM_tFileOutputDelimited_8);
 					outtFileOutputDelimited_8.write("Nom");
 					outtFileOutputDelimited_8.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_8);
@@ -2698,7 +2706,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_loc_tmp.codage = row1.codage;
-									DIM_loc_tmp.Code = row1.Code;
+									DIM_loc_tmp.Code_loc = row1.Code;
 									DIM_loc_tmp.Nom = row1.Nom;
 									DIM_loc = DIM_loc_tmp;
 								} // closing filter/reject
@@ -2711,7 +2719,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_atm_tmp.codage = row1.codage;
-									DIM_atm_tmp.Code = row1.Code;
+									DIM_atm_tmp.Code_atm = row1.Code;
 									DIM_atm_tmp.Nom = row1.Nom;
 									DIM_atm = DIM_atm_tmp;
 								} // closing filter/reject
@@ -2724,7 +2732,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_catr_tmp.codage = row1.codage;
-									DIM_catr_tmp.Code = row1.Code;
+									DIM_catr_tmp.Code_catr = row1.Code;
 									DIM_catr_tmp.Nom = row1.Nom;
 									DIM_catr = DIM_catr_tmp;
 								} // closing filter/reject
@@ -2737,7 +2745,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_catv_tmp.codage = row1.codage;
-									DIM_catv_tmp.Code = row1.Code;
+									DIM_catv_tmp.Code_catv = row1.Code;
 									DIM_catv_tmp.Nom = row1.Nom;
 									DIM_catv = DIM_catv_tmp;
 								} // closing filter/reject
@@ -2750,7 +2758,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_manv_tmp.codage = row1.codage;
-									DIM_manv_tmp.Code = row1.Code;
+									DIM_manv_tmp.Code_manv = row1.Code;
 									DIM_manv_tmp.Nom = row1.Nom;
 									DIM_manv = DIM_manv_tmp;
 								} // closing filter/reject
@@ -2763,7 +2771,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_catu_tmp.codage = row1.codage;
-									DIM_catu_tmp.Code = row1.Code;
+									DIM_catu_tmp.Code_catu = row1.Code;
 									DIM_catu_tmp.Nom = row1.Nom;
 									DIM_catu = DIM_catu_tmp;
 								} // closing filter/reject
@@ -2776,7 +2784,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_grav_tmp.codage = row1.codage;
-									DIM_grav_tmp.Code = row1.Code;
+									DIM_grav_tmp.Code_grav = row1.Code;
 									DIM_grav_tmp.Nom = row1.Nom;
 									DIM_grav = DIM_grav_tmp;
 								} // closing filter/reject
@@ -2789,7 +2797,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 
 								) {
 									DIM_trajet_tmp.codage = row1.codage;
-									DIM_trajet_tmp.Code = row1.Code;
+									DIM_trajet_tmp.Code_trajet = row1.Code;
 									DIM_trajet_tmp.Nom = row1.Nom;
 									DIM_trajet = DIM_trajet_tmp;
 								} // closing filter/reject
@@ -2832,8 +2840,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_1.append(DIM_loc.codage);
 								}
 								sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-								if (DIM_loc.Code != null) {
-									sb_tFileOutputDelimited_1.append(DIM_loc.Code);
+								if (DIM_loc.Code_loc != null) {
+									sb_tFileOutputDelimited_1.append(DIM_loc.Code_loc);
 								}
 								sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
 								if (DIM_loc.Nom != null) {
@@ -2892,8 +2900,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_2.append(DIM_atm.codage);
 								}
 								sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-								if (DIM_atm.Code != null) {
-									sb_tFileOutputDelimited_2.append(DIM_atm.Code);
+								if (DIM_atm.Code_atm != null) {
+									sb_tFileOutputDelimited_2.append(DIM_atm.Code_atm);
 								}
 								sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
 								if (DIM_atm.Nom != null) {
@@ -2952,8 +2960,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_3.append(DIM_catr.codage);
 								}
 								sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-								if (DIM_catr.Code != null) {
-									sb_tFileOutputDelimited_3.append(DIM_catr.Code);
+								if (DIM_catr.Code_catr != null) {
+									sb_tFileOutputDelimited_3.append(DIM_catr.Code_catr);
 								}
 								sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
 								if (DIM_catr.Nom != null) {
@@ -3012,8 +3020,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_4.append(DIM_catv.codage);
 								}
 								sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-								if (DIM_catv.Code != null) {
-									sb_tFileOutputDelimited_4.append(DIM_catv.Code);
+								if (DIM_catv.Code_catv != null) {
+									sb_tFileOutputDelimited_4.append(DIM_catv.Code_catv);
 								}
 								sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
 								if (DIM_catv.Nom != null) {
@@ -3072,8 +3080,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_5.append(DIM_manv.codage);
 								}
 								sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
-								if (DIM_manv.Code != null) {
-									sb_tFileOutputDelimited_5.append(DIM_manv.Code);
+								if (DIM_manv.Code_manv != null) {
+									sb_tFileOutputDelimited_5.append(DIM_manv.Code_manv);
 								}
 								sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
 								if (DIM_manv.Nom != null) {
@@ -3132,8 +3140,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_6.append(DIM_catu.codage);
 								}
 								sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
-								if (DIM_catu.Code != null) {
-									sb_tFileOutputDelimited_6.append(DIM_catu.Code);
+								if (DIM_catu.Code_catu != null) {
+									sb_tFileOutputDelimited_6.append(DIM_catu.Code_catu);
 								}
 								sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
 								if (DIM_catu.Nom != null) {
@@ -3192,8 +3200,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_7.append(DIM_grav.codage);
 								}
 								sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
-								if (DIM_grav.Code != null) {
-									sb_tFileOutputDelimited_7.append(DIM_grav.Code);
+								if (DIM_grav.Code_grav != null) {
+									sb_tFileOutputDelimited_7.append(DIM_grav.Code_grav);
 								}
 								sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
 								if (DIM_grav.Nom != null) {
@@ -3252,8 +3260,8 @@ public class P_split_REFERENTIEL implements TalendJob {
 									sb_tFileOutputDelimited_8.append(DIM_trajet.codage);
 								}
 								sb_tFileOutputDelimited_8.append(OUT_DELIM_tFileOutputDelimited_8);
-								if (DIM_trajet.Code != null) {
-									sb_tFileOutputDelimited_8.append(DIM_trajet.Code);
+								if (DIM_trajet.Code_trajet != null) {
+									sb_tFileOutputDelimited_8.append(DIM_trajet.Code_trajet);
 								}
 								sb_tFileOutputDelimited_8.append(OUT_DELIM_tFileOutputDelimited_8);
 								if (DIM_trajet.Nom != null) {
@@ -4150,6 +4158,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 139200 characters generated by Talend Open Studio for Data Integration on the
- * 3 avril 2020 à 09:52:09 CEST
+ * 141112 characters generated by Talend Open Studio for Data Integration on the
+ * 3 avril 2020 à 16:16:08 CEST
  ************************************************************************************************/

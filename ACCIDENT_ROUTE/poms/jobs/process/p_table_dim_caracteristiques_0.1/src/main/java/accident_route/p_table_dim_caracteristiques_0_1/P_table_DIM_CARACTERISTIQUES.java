@@ -350,9 +350,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.col;
 		}
 
-		public Integer dep;
+		public String dep;
 
-		public Integer getDep() {
+		public String getDep() {
 			return this.dep;
 		}
 
@@ -483,7 +483,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 					this.col = readInteger(dis);
 
-					this.dep = readInteger(dis);
+					this.dep = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -522,9 +522,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				writeInteger(this.col, dos);
 
-				// Integer
+				// String
 
-				writeInteger(this.dep, dos);
+				writeString(this.dep, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -542,7 +542,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			sb.append(",loc=" + String.valueOf(loc));
 			sb.append(",atm=" + String.valueOf(atm));
 			sb.append(",col=" + String.valueOf(col));
-			sb.append(",dep=" + String.valueOf(dep));
+			sb.append(",dep=" + dep);
 			sb.append("]");
 
 			return sb.toString();
@@ -680,9 +680,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.Column14;
 		}
 
-		public Integer dep;
+		public String dep;
 
-		public Integer getDep() {
+		public String getDep() {
 			return this.dep;
 		}
 
@@ -786,7 +786,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 					this.Column14 = readString(dis);
 
-					this.dep = readInteger(dis);
+					this.dep = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -870,9 +870,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				writeString(this.Column14, dos);
 
-				// Integer
+				// String
 
-				writeInteger(this.dep, dos);
+				writeString(this.dep, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -900,7 +900,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			sb.append(",gps=" + String.valueOf(gps));
 			sb.append(",lat=" + String.valueOf(lat));
 			sb.append(",Column14=" + Column14);
-			sb.append(",dep=" + String.valueOf(dep));
+			sb.append(",dep=" + dep);
 			sb.append("]");
 
 			return sb.toString();
@@ -1039,9 +1039,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.Column14;
 		}
 
-		public Integer dep;
+		public String dep;
 
-		public Integer getDep() {
+		public String getDep() {
 			return this.dep;
 		}
 
@@ -1207,7 +1207,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 					this.Column14 = readString(dis);
 
-					this.dep = readInteger(dis);
+					this.dep = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -1291,9 +1291,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				writeString(this.Column14, dos);
 
-				// Integer
+				// String
 
-				writeInteger(this.dep, dos);
+				writeString(this.dep, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -1321,7 +1321,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			sb.append(",gps=" + String.valueOf(gps));
 			sb.append(",lat=" + String.valueOf(lat));
 			sb.append(",Column14=" + Column14);
-			sb.append(",dep=" + String.valueOf(dep));
+			sb.append(",dep=" + dep);
 			sb.append("]");
 
 			return sb.toString();
@@ -1517,6 +1517,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				class Var__tMap_1__Struct {
 					String mois;
 					String jour;
+					String dep;
 				}
 				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
 // ###############################
@@ -1545,8 +1546,56 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				int tos_count_tUniqRow_1 = 0;
 
+				class KeyStruct_tUniqRow_1 {
+
+					private static final int DEFAULT_HASHCODE = 1;
+					private static final int PRIME = 31;
+					private int hashCode = DEFAULT_HASHCODE;
+					public boolean hashCodeDirty = true;
+
+					Long Num_Acc;
+
+					@Override
+					public int hashCode() {
+						if (this.hashCodeDirty) {
+							final int prime = PRIME;
+							int result = DEFAULT_HASHCODE;
+
+							result = prime * result + ((this.Num_Acc == null) ? 0 : this.Num_Acc.hashCode());
+
+							this.hashCode = result;
+							this.hashCodeDirty = false;
+						}
+						return this.hashCode;
+					}
+
+					@Override
+					public boolean equals(Object obj) {
+						if (this == obj)
+							return true;
+						if (obj == null)
+							return false;
+						if (getClass() != obj.getClass())
+							return false;
+						final KeyStruct_tUniqRow_1 other = (KeyStruct_tUniqRow_1) obj;
+
+						if (this.Num_Acc == null) {
+							if (other.Num_Acc != null)
+								return false;
+
+						} else if (!this.Num_Acc.equals(other.Num_Acc))
+
+							return false;
+
+						return true;
+					}
+
+				}
+
 				int nb_uniques_tUniqRow_1 = 0;
 				int nb_duplicates_tUniqRow_1 = 0;
+				KeyStruct_tUniqRow_1 finder_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+				java.util.Set<KeyStruct_tUniqRow_1> keystUniqRow_1 = new java.util.HashSet<KeyStruct_tUniqRow_1>();
 
 				/**
 				 * [tUniqRow_1 begin ] stop
@@ -1832,25 +1881,8 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 							columnIndexWithD_tFileInputDelimited_1 = 15;
 
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.dep = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"dep", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.dep = null;
-
-							}
+							caracteristiques.dep = fid_tFileInputDelimited_1
+									.get(columnIndexWithD_tFileInputDelimited_1);
 
 							if (rowstate_tFileInputDelimited_1.getException() != null) {
 								throw rowstate_tFileInputDelimited_1.getException();
@@ -1902,22 +1934,39 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 								runStat.updateStatOnConnection(iterateId, 1, 1, "caracteristiques");
 							}
 
-							caracteristiques_U.Num_Acc = caracteristiques.Num_Acc;
-							caracteristiques_U.an = caracteristiques.an;
-							caracteristiques_U.mois = caracteristiques.mois;
-							caracteristiques_U.jour = caracteristiques.jour;
-							caracteristiques_U.hrmn = caracteristiques.hrmn;
-							caracteristiques_U.lum = caracteristiques.lum;
-							caracteristiques_U.agg = caracteristiques.agg;
-							caracteristiques_U.Column7 = caracteristiques.Column7;
-							caracteristiques_U.atm = caracteristiques.atm;
-							caracteristiques_U.col = caracteristiques.col;
-							caracteristiques_U.Column10 = caracteristiques.Column10;
-							caracteristiques_U.adr = caracteristiques.adr;
-							caracteristiques_U.gps = caracteristiques.gps;
-							caracteristiques_U.lat = caracteristiques.lat;
-							caracteristiques_U.Column14 = caracteristiques.Column14;
-							caracteristiques_U.dep = caracteristiques.dep;
+							caracteristiques_U = null;
+							finder_tUniqRow_1.Num_Acc = caracteristiques.Num_Acc;
+							finder_tUniqRow_1.hashCodeDirty = true;
+							if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
+								KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+
+								new_tUniqRow_1.Num_Acc = caracteristiques.Num_Acc;
+
+								keystUniqRow_1.add(new_tUniqRow_1);
+								if (caracteristiques_U == null) {
+
+									caracteristiques_U = new caracteristiques_UStruct();
+								}
+								caracteristiques_U.Num_Acc = caracteristiques.Num_Acc;
+								caracteristiques_U.an = caracteristiques.an;
+								caracteristiques_U.mois = caracteristiques.mois;
+								caracteristiques_U.jour = caracteristiques.jour;
+								caracteristiques_U.hrmn = caracteristiques.hrmn;
+								caracteristiques_U.lum = caracteristiques.lum;
+								caracteristiques_U.agg = caracteristiques.agg;
+								caracteristiques_U.Column7 = caracteristiques.Column7;
+								caracteristiques_U.atm = caracteristiques.atm;
+								caracteristiques_U.col = caracteristiques.col;
+								caracteristiques_U.Column10 = caracteristiques.Column10;
+								caracteristiques_U.adr = caracteristiques.adr;
+								caracteristiques_U.gps = caracteristiques.gps;
+								caracteristiques_U.lat = caracteristiques.lat;
+								caracteristiques_U.Column14 = caracteristiques.Column14;
+								caracteristiques_U.dep = caracteristiques.dep;
+								nb_uniques_tUniqRow_1++;
+							} else {
+								nb_duplicates_tUniqRow_1++;
+							}
 
 							tos_count_tUniqRow_1++;
 
@@ -1962,7 +2011,14 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 									Var__tMap_1__Struct Var = Var__tMap_1;
 									Var.mois = String.format("%1$2s", caracteristiques_U.mois).replace(' ', '0');
-									Var.jour = String.format("%1$2s", caracteristiques_U.jour).replace(' ', '0');// ###############################
+									Var.jour = String.format("%1$2s", caracteristiques_U.jour).replace(' ', '0');
+									Var.dep = StringHandling.RIGHT(caracteristiques_U.dep, 1).equals("0")
+											? StringHandling.LEFT(caracteristiques_U.dep, 2)
+											: StringHandling.RIGHT(caracteristiques_U.dep, 2).equals("01")
+													? StringHandling.LEFT(caracteristiques_U.dep, 1) + "A"
+													: StringHandling.RIGHT(caracteristiques_U.dep, 2).equals("02")
+															? StringHandling.LEFT(caracteristiques_U.dep, 1) + "B"
+															: caracteristiques_U.dep;// ###############################
 									// ###############################
 									// # Output tables
 
@@ -1975,7 +2031,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 									P_DIM_caracteristiques_tmp.loc = caracteristiques_U.agg;
 									P_DIM_caracteristiques_tmp.atm = caracteristiques_U.atm;
 									P_DIM_caracteristiques_tmp.col = caracteristiques_U.col;
-									P_DIM_caracteristiques_tmp.dep = caracteristiques_U.dep;
+									P_DIM_caracteristiques_tmp.dep = Var.dep;
 									P_DIM_caracteristiques = P_DIM_caracteristiques_tmp;
 // ###############################
 
@@ -2632,6 +2688,6 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 80176 characters generated by Talend Open Studio for Data Integration on the
- * 3 avril 2020 à 08:12:11 CEST
+ * 81738 characters generated by Talend Open Studio for Data Integration on the
+ * 3 avril 2020 à 15:05:09 CEST
  ************************************************************************************************/

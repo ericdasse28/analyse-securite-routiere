@@ -1,5 +1,5 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="String.format(&quot;%1$02s&quot;, caracteristiques_U.jour).replace(' ','0')">
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):&#xA;StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;01&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;A&quot;:StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;02&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;B&quot;:caracteristiques_U.dep">
   <variables name="caracteristiques_U.Num_Acc" value="null" talendType="id_Long" nullable="true"/>
   <variables name="caracteristiques_U.an" value="null" talendType="id_Integer" nullable="true"/>
   <variables name="caracteristiques_U.mois" value="null" talendType="id_Integer" nullable="true"/>
@@ -20,4 +20,16 @@
   <variables name="String.format(&quot;%02d&quot;, Int.parseInt(caracteristiques_U.mois)) " value="null" talendType="id_String"/>
   <variables name="String.format(&quot;%02d&quot;, Int.parseInt(caracteristiques_U.jour)) " value="null" talendType="id_String"/>
   <variables name="String.format(&quot;%1$02s&quot;, caracteristiques_U.mois).replace(' ','0') " value="null" talendType="id_String"/>
+  <variables name="String.format(&quot;%1$2s&quot;, caracteristiques_U.mois).replace(' ','0') " value="null" talendType="id_String"/>
+  <variables name="String.format(&quot;%1$2s&quot;, caracteristiques_U.jour).replace(' ','0') " value="null" talendType="id_String"/>
+  <variables name="String.format(&quot;%1$3s&quot;, caracteristiques_U.dep).replace(' ','0')&#xD;&#xA;&#xD;&#xA;Numeric.removeSequence(&quot;s1&quot;) " value="null" talendType="id_String"/>
+  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(0,&quot;&quot;) " value="null" talendType="id_String"/>
+  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(0,&quot;&quot;)) " value="null" talendType="id_String"/>
+  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(&quot;0&quot;,&quot;&quot;)) " value="null" talendType="id_String"/>
+  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll([0],&quot;&quot;)) " value="null" talendType="id_String"/>
+  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(&quot;[0]&quot;,&quot;&quot;)) " value="null" talendType="id_String"/>
+  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1)&#xD;&#xA;StringHandling.LEFT(&quot;hello world!&quot;,5) &#xD;&#xA;StringHandling.RTRIM(string[, trim_set])&#xD;&#xA;caracteristiques_U.dep.replaceFirst(&quot;0&quot;,&quot;&quot;) " value="null" talendType="id_String"/>
+  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):caracteristiques_U.dep " value="null" talendType="id_String"/>
+  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):caracteristiques_U.dep&#xD;&#xA;||&#xD;&#xA;StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;01&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;A&quot;:caracteristiques_U.dep " value="null" talendType="id_String"/>
+  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):&#xD;&#xA;StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;01&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;A&quot;:StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;02&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;B&quot;:caracteristiques_U.dep " value="null" talendType="id_String"/>
 </expression:EMFExpression>

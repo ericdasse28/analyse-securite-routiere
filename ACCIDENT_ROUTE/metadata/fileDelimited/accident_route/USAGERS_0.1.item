@@ -14,7 +14,7 @@
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dft96nQWEeqnNsDStaUOSA" label="locp" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dft963QWEeqnNsDStaUOSA" label="actp" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dft97HQWEeqnNsDStaUOSA" label="etatp" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dft97XQWEeqnNsDStaUOSA" label="an_nais" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dft97XQWEeqnNsDStaUOSA" label="an_nais" length="-1" talendType="id_Date" pattern="&quot;yyyy&quot;"/>
     </ownedElement>
   </orgomg.cwm.resource.record:RecordFile>
 </xmi:XMI>
