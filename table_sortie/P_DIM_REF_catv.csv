@@ -1,34 +1,34 @@
 codage;Code;Nom
 catv;01; Bicyclette
 catv;02; Cyclomoteur <50cm3
-catv;03;" Voiturette (Quadricycle ï¿½ moteur carrossï¿½) (anciennement ""v"
-catv;04; Rï¿½fï¿½rence plus utilisï¿½e depuis 2006 (scooter immatriculï¿½)
-catv;05; Rï¿½fï¿½rence plus utilisï¿½e depuis 2006 (motocyclette)
-catv;06; Rï¿½fï¿½rence plus utilisï¿½e depuis 2006 (side-car)
+catv;03;" Voiturette (Quadricycle à moteur carrossé) (anciennement ""v"
+catv;04; Référence plus utilisée depuis 2006 (scooter immatriculé)
+catv;05; Référence plus utilisée depuis 2006 (motocyclette)
+catv;06; Référence plus utilisée depuis 2006 (side-car)
 catv;07; VL seul
-catv;08; Catï¿½gorie plus utilisï¿½e (VL + caravane)
-catv;09; Catï¿½gorie plus utilisï¿½e (VL + remorque)
+catv;08; Catégorie plus utilisée (VL + caravane)
+catv;09; Catégorie plus utilisée (VL + remorque)
 catv;10; VU seul 1,5T <= PTAC <= 3,5T avec ou sans remorque (ancienn
-catv;11; Rï¿½fï¿½rence plus utilisï¿½e depuis 2006 (VU (10) + caravane)
-catv;12; Rï¿½fï¿½rence plus utilisï¿½e depuis 2006 (VU (10) + remorque)
+catv;11; Référence plus utilisée depuis 2006 (VU (10) + caravane)
+catv;12; Référence plus utilisée depuis 2006 (VU (10) + remorque)
 catv;13; PL seul 3,5T <PTCA <= 7,5T
 catv;14; PL seul > 7,5T
 catv;15; PL > 3,5T + remorque
 catv;16; Tracteur routier seul
 catv;17; Tracteur routier + semi-remorque
-catv;18; Rï¿½fï¿½rence plus utilisï¿½e depuis 2006 (transport en commun)
-catv;19; Rï¿½fï¿½rence plus utilisï¿½e depuis 2006 (tramway)
-catv;20; Engin spï¿½cial
+catv;18; Référence plus utilisée depuis 2006 (transport en commun)
+catv;19; Référence plus utilisée depuis 2006 (tramway)
+catv;20; Engin spécial
 catv;21; Tracteur agricole
 catv;30; Scooter < 50 cm3
 catv;31; Motocyclette > 50 cm3 et <= 125 cm3
 catv;32; Scooter > 50 cm3 et <= 125 cm3
 catv;33; Motocyclette > 125 cm3
 catv;34; Scooter > 125 cm3
-catv;35; Quad lï¿½ger <= 50 cm3 (Quadricycle ï¿½ moteur non carrossï¿½)
-catv;36; Quad lourd > 50 cm3 (Quadricycle ï¿½ moteur non carrossï¿½)
+catv;35; Quad léger <= 50 cm3 (Quadricycle à moteur non carrossé)
+catv;36; Quad lourd > 50 cm3 (Quadricycle à moteur non carrossé)
 catv;37; Autobus
 catv;38; Autocar
 catv;39; Train
 catv;40; Tramway
-catv;99; Autre vï¿½hicule
+catv;99; Autre véhicule

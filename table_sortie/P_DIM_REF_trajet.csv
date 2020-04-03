@@ -1,7 +1,7 @@
 codage;Code;Nom
-trajet;1 ;Domicile ï¿½ travail
-trajet;2 ;Domicile ï¿½ ï¿½cole
-trajet;3 ;Courses ï¿½ achats
+trajet;1 ;Domicile – travail
+trajet;2 ;Domicile – école
+trajet;3 ;Courses – achats
 trajet;4 ;Utilisation professionnelle
-trajet;5 ;Promenade ï¿½ loisirs
+trajet;5 ;Promenade – loisirs
 trajet;9 ;Autre

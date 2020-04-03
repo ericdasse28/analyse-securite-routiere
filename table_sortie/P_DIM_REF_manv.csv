@@ -1,24 +1,24 @@
 codage;Code;Nom
 manv;1 ;Sans changement de direction
-manv;2 ;Mï¿½me sens, mï¿½me file
+manv;2 ;Même sens, même file
 manv;3 ;Entre 2 files
-manv;4 ;En marche arriï¿½re
+manv;4 ;En marche arrière
 manv;5 ;A contresens
 manv;6 ;En franchissant le terre-plein central
-manv;7 ;Dans le couloir bus, dans le mï¿½me sens
+manv;7 ;Dans le couloir bus, dans le même sens
 manv;8 ;Dans le couloir bus, dans le sens inverse
-manv;9 ;En sï¿½insï¿½rant
-manv;10; En faisant demi-tour sur la chaussï¿½e
+manv;9 ;En s’insérant
+manv;10; En faisant demi-tour sur la chaussée
 manv;11; Changement A gauche
 manv;12; Changement A droite
-manv;13; Dï¿½portï¿½ A gauche
-manv;14; Dï¿½portï¿½ A droite
+manv;13; Déporté A gauche
+manv;14; Déporté A droite
 manv;15; Tournant A gauche
 manv;16; Tournant A droite
 manv;;
-manv;19; Divers Traversant la chaussï¿½e
+manv;19; Divers Traversant la chaussée
 manv;20; Divers Manoeuvre de stationnement
-manv;21; Divers Manoeuvre dï¿½ï¿½vitement
+manv;21; Divers Manoeuvre d’évitement
 manv;22; Divers Ouverture de porte
-manv;23; Divers Arrï¿½tï¿½ (hors stationnement)
+manv;23; Divers Arrêté (hors stationnement)
 manv;24; Divers En stationnement (avec occupants)

@@ -1795,7 +1795,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_1 = null;
 
 				outtFileOutputDelimited_1 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_1.length() == 0) {
 					outtFileOutputDelimited_1.write("codage");
 					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
@@ -1893,7 +1893,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_2 = null;
 
 				outtFileOutputDelimited_2 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_2.length() == 0) {
 					outtFileOutputDelimited_2.write("codage");
 					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
@@ -1991,7 +1991,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_3 = null;
 
 				outtFileOutputDelimited_3 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_3, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_3, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_3.length() == 0) {
 					outtFileOutputDelimited_3.write("codage");
 					outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
@@ -2089,7 +2089,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_4 = null;
 
 				outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_4.length() == 0) {
 					outtFileOutputDelimited_4.write("codage");
 					outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
@@ -2187,7 +2187,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_5 = null;
 
 				outtFileOutputDelimited_5 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_5.length() == 0) {
 					outtFileOutputDelimited_5.write("codage");
 					outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
@@ -2285,7 +2285,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_6 = null;
 
 				outtFileOutputDelimited_6 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_6.length() == 0) {
 					outtFileOutputDelimited_6.write("codage");
 					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
@@ -2383,7 +2383,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_7 = null;
 
 				outtFileOutputDelimited_7 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_7, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_7, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_7.length() == 0) {
 					outtFileOutputDelimited_7.write("codage");
 					outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
@@ -2481,7 +2481,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 				java.io.Writer outtFileOutputDelimited_8 = null;
 
 				outtFileOutputDelimited_8 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_8, true), "UTF-8"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_8, true), "ISO-8859-15"));
 				if (filetFileOutputDelimited_8.length() == 0) {
 					outtFileOutputDelimited_8.write("codage");
 					outtFileOutputDelimited_8.write(OUT_DELIM_tFileOutputDelimited_8);
@@ -2572,7 +2572,7 @@ public class P_split_REFERENTIEL implements TalendJob {
 					try {
 						fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited(
 								"C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Referentiel.csv",
-								"UTF-8", ";", "\n", false, 1, 0, limit_tFileInputDelimited_1, -1, false);
+								"ISO-8859-15", ";", "\n", false, 1, 0, limit_tFileInputDelimited_1, -1, false);
 					} catch (java.lang.Exception e) {
 
 						System.err.println(e.getMessage());
@@ -4150,6 +4150,6 @@ public class P_split_REFERENTIEL implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 139146 characters generated by Talend Open Studio for Data Integration on the
- * 3 avril 2020 à 09:23:12 CEST
+ * 139200 characters generated by Talend Open Studio for Data Integration on the
+ * 3 avril 2020 à 09:52:09 CEST
  ************************************************************************************************/

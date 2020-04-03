@@ -1,10 +1,10 @@
 codage;Code;Nom
 atm;1 ;Normale
-atm;2 ;Pluie lï¿½gï¿½re
+atm;2 ;Pluie légère
 atm;3 ;Pluie forte
-atm;4 ;Neige - grï¿½le
-atm;5 ;Brouillard - fumï¿½e
-atm;6 ;Vent fort - tempï¿½te
-atm;7 ;Temps ï¿½blouissant
+atm;4 ;Neige - grêle
+atm;5 ;Brouillard - fumée
+atm;6 ;Vent fort - tempête
+atm;7 ;Temps éblouissant
 atm;8 ;Temps couvert
 atm;9 ;Autre
