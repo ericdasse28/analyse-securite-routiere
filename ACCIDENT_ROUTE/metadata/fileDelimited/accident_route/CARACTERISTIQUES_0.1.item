@@ -4,9 +4,9 @@
   <orgomg.cwm.resource.record:RecordFile xmi:id="_3Or2cnQWEeqnNsDStaUOSA" name="default" dataManager="_3Or2cXQWEeqnNsDStaUOSA">
     <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_3Or2c3QWEeqnNsDStaUOSA" id="_rrm00HQWEeqnNsDStaUOSA" label="CARACTERISTIQUES">
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2dHQWEeqnNsDStaUOSA" label="Num_Acc" length="12" talendType="id_Long" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2dXQWEeqnNsDStaUOSA" label="an" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2dnQWEeqnNsDStaUOSA" label="mois" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2d3QWEeqnNsDStaUOSA" label="jour" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2dXQWEeqnNsDStaUOSA" label="an" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2dnQWEeqnNsDStaUOSA" label="mois" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2d3QWEeqnNsDStaUOSA" label="jour" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2eHQWEeqnNsDStaUOSA" label="hrmn" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2eXQWEeqnNsDStaUOSA" label="lum" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
       <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3Or2enQWEeqnNsDStaUOSA" label="agg" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>

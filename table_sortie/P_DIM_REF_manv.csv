@@ -1,0 +1,24 @@
+codage;Code;Nom
+manv;1 ;Sans changement de direction
+manv;2 ;M�me sens, m�me file
+manv;3 ;Entre 2 files
+manv;4 ;En marche arri�re
+manv;5 ;A contresens
+manv;6 ;En franchissant le terre-plein central
+manv;7 ;Dans le couloir bus, dans le m�me sens
+manv;8 ;Dans le couloir bus, dans le sens inverse
+manv;9 ;En s�ins�rant
+manv;10; En faisant demi-tour sur la chauss�e
+manv;11; Changement A gauche
+manv;12; Changement A droite
+manv;13; D�port� A gauche
+manv;14; D�port� A droite
+manv;15; Tournant A gauche
+manv;16; Tournant A droite
+manv;;
+manv;19; Divers Traversant la chauss�e
+manv;20; Divers Manoeuvre de stationnement
+manv;21; Divers Manoeuvre d��vitement
+manv;22; Divers Ouverture de porte
+manv;23; Divers Arr�t� (hors stationnement)
+manv;24; Divers En stationnement (avec occupants)

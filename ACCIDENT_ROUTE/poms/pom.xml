@@ -12,6 +12,8 @@
     <module>code/routines</module>
     <module>jobs/process/test_0.1</module>
     <module>jobs/process/p_table_dim_vehicule_0.1</module>
+    <module>jobs/process/p_table_dim_caracteristiques_0.1</module>
+    <module>jobs/process/p_split_referentiel_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ACCIDENT_ROUTE</talend.project.name>

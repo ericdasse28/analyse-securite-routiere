@@ -1,0 +1,23 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="String.format(&quot;%1$02s&quot;, caracteristiques_U.jour).replace(' ','0')">
+  <variables name="caracteristiques_U.Num_Acc" value="null" talendType="id_Long" nullable="true"/>
+  <variables name="caracteristiques_U.an" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.mois" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.jour" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.hrmn" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.lum" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.agg" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.Column7" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.atm" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.col" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.Column10" value="null" talendType="id_String" nullable="true"/>
+  <variables name="caracteristiques_U.adr" value="null" talendType="id_String" nullable="true"/>
+  <variables name="caracteristiques_U.gps" value="null" talendType="id_Character" nullable="true"/>
+  <variables name="caracteristiques_U.lat" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="caracteristiques_U.Column14" value="null" talendType="id_String" nullable="true"/>
+  <variables name="caracteristiques_U.dep" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="" value="0" talendType="id_Integer"/>
+  <variables name="String.format(&quot;%02d&quot;, Int.parseInt(caracteristiques_U.mois)) " value="null" talendType="id_String"/>
+  <variables name="String.format(&quot;%02d&quot;, Int.parseInt(caracteristiques_U.jour)) " value="null" talendType="id_String"/>
+  <variables name="String.format(&quot;%1$02s&quot;, caracteristiques_U.mois).replace(' ','0') " value="null" talendType="id_String"/>
+</expression:EMFExpression>
