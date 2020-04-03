@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="(int)TalendDate.diffDate(TalendDate.getCurrentDate() ,row1.an_nais,&quot;yyyy&quot;,true)">
+  <variables name="row1.Num_Acc" value="null" talendType="id_Long" nullable="true"/>
+  <variables name="row1.letco" value="null" talendType="id_Character" nullable="true"/>
+  <variables name="row1.place" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.catu" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.grav" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.sexe" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.trajet" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.secu" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.locp" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.actp" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.etatp" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.an_nais" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="" value="0" talendType="id_Integer"/>
+  <variables name="Integer.valueOf(TalendDate.formatDate(&quot;yyyy&quot;,TalendDate.getCurrentDate())) " value="0" talendType="id_Integer"/>
+  <variables name="Integer.valueOf(TalendDate.formatDate(&quot;yyyy&quot;,TalendDate.getCurrentDate()))-row1.an_nais " value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="Var.datein-row1.an_nais " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.diffDate(TalendDate.getCurrentDate() ,row1.an_nais,&quot;yyyy&quot;,true) " value="0" talendType="id_Integer"/>
+  <variables name="(int)TalendDate.diffDate(TalendDate.getCurrentDate() ,row1.an_nais,&quot;yyyy&quot;,true) " value="0" talendType="id_Integer"/>
+</expression:EMFExpression>

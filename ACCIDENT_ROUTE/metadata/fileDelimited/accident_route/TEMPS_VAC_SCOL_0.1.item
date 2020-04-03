@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_OiS9MHWTEeq1h_sPQfr1SA" name="TEMPS_VAC_SCOL" dataPackage="_OiS9MXWTEeq1h_sPQfr1SA" Server="Localhost 127.0.0.1" FilePath="C:/Users/DIGINAMIC/Desktop/projet fin de formation/vacscol.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_OiS9MXWTEeq1h_sPQfr1SA" name="default" dataManager="_OiS9MHWTEeq1h_sPQfr1SA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_OiS9MnWTEeq1h_sPQfr1SA" id="_kMiRgHWSEeq1h_sPQfr1SA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_OiS9M3WTEeq1h_sPQfr1SA" label="date" length="10" talendType="id_Date" pattern="&quot;yyyy-MM-dd&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_OiS9NHWTEeq1h_sPQfr1SA" label="vacances_zone_a" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_OiS9NXWTEeq1h_sPQfr1SA" label="vacances_zone_b" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_OiS9NnWTEeq1h_sPQfr1SA" label="vacances_zone_c" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_OiS9N3WTEeq1h_sPQfr1SA" label="nom_vacances" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

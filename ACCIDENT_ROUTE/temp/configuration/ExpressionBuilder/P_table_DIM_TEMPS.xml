@@ -1,0 +1,8 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_2=>" expression="TalendDate.formatDate(&quot;yyyyMMdd&quot;,row3.date)">
+  <variables name="row3.date" value="null" talendType="id_Date" nullable="true"/>
+  <variables name="row3.vacances_zone_a" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.vacances_zone_b" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.vacances_zone_c" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.nom_vacances" value="null" talendType="id_String" nullable="true"/>
+</expression:EMFExpression>
