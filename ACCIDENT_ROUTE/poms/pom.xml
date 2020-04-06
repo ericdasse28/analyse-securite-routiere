@@ -16,8 +16,12 @@
     <module>jobs/process/p_split_referentiel_0.1</module>
     <module>jobs/process/p_table_dim_lieux_0.1</module>
     <module>jobs/process/p_table_dim_temps_0.1</module>
-    <module>jobs/process/p_table_dim_usagers_nu_0.1</module>
     <module>jobs/process/p_table_dim_departement_nu_0.1</module>
+    <module>jobs/process/d_nettoyage_regions_0.1</module>
+    <module>jobs/process/p_fait_accidentalite_0.1</module>
+    <module>jobs/process/d_nettoyage_usagers_0.1</module>
+    <module>jobs/process/p_table_dim_usagers_0.1</module>
+    <module>jobs/process/d_nettoyage_departements_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ACCIDENT_ROUTE</talend.project.name>

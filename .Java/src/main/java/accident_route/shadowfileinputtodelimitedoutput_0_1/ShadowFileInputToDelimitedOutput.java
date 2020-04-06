@@ -259,14 +259,14 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 		}
 	}
 
-	public void tFileInputDelimited_error(Exception exception, String errorComponent,
+	public void tFileInputExcel_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
 		status = "failure";
 
-		tFileInputDelimited_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputExcel_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tFileOutputDelimited_error(Exception exception, String errorComponent,
@@ -276,10 +276,10 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 		status = "failure";
 
-		tFileInputDelimited_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputExcel_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tFileInputDelimited_onSubJobError(Exception exception, String errorComponent,
+	public void tFileInputExcel_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -291,40 +291,100 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 		final static byte[] commonByteArrayLock_ACCIDENT_ROUTE_ShadowFileInputToDelimitedOutput = new byte[0];
 		static byte[] commonByteArray_ACCIDENT_ROUTE_ShadowFileInputToDelimitedOutput = new byte[0];
 
-		public String row0;
+		public String A;
 
-		public String getRow0() {
-			return this.row0;
+		public String getA() {
+			return this.A;
 		}
 
-		public String row1;
+		public String B;
 
-		public String getRow1() {
-			return this.row1;
+		public String getB() {
+			return this.B;
 		}
 
-		public String row2;
+		public String C;
 
-		public String getRow2() {
-			return this.row2;
+		public String getC() {
+			return this.C;
 		}
 
-		public String row3;
+		public String D;
 
-		public String getRow3() {
-			return this.row3;
+		public String getD() {
+			return this.D;
 		}
 
-		public String row4;
+		public String E;
 
-		public String getRow4() {
-			return this.row4;
+		public String getE() {
+			return this.E;
 		}
 
-		public String row5;
+		public String F;
 
-		public String getRow5() {
-			return this.row5;
+		public String getF() {
+			return this.F;
+		}
+
+		public String G;
+
+		public String getG() {
+			return this.G;
+		}
+
+		public String H;
+
+		public String getH() {
+			return this.H;
+		}
+
+		public String I;
+
+		public String getI() {
+			return this.I;
+		}
+
+		public String J;
+
+		public String getJ() {
+			return this.J;
+		}
+
+		public String K;
+
+		public String getK() {
+			return this.K;
+		}
+
+		public String L;
+
+		public String getL() {
+			return this.L;
+		}
+
+		public String M;
+
+		public String getM() {
+			return this.M;
+		}
+
+		public String N;
+
+		public String getN() {
+			return this.N;
+		}
+
+		public String O;
+
+		public String getO() {
+			return this.O;
+		}
+
+		public String P;
+
+		public String getP() {
+			return this.P;
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -366,17 +426,37 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 					int length = 0;
 
-					this.row0 = readString(dis);
+					this.A = readString(dis);
 
-					this.row1 = readString(dis);
+					this.B = readString(dis);
 
-					this.row2 = readString(dis);
+					this.C = readString(dis);
 
-					this.row3 = readString(dis);
+					this.D = readString(dis);
 
-					this.row4 = readString(dis);
+					this.E = readString(dis);
 
-					this.row5 = readString(dis);
+					this.F = readString(dis);
+
+					this.G = readString(dis);
+
+					this.H = readString(dis);
+
+					this.I = readString(dis);
+
+					this.J = readString(dis);
+
+					this.K = readString(dis);
+
+					this.L = readString(dis);
+
+					this.M = readString(dis);
+
+					this.N = readString(dis);
+
+					this.O = readString(dis);
+
+					this.P = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -392,27 +472,67 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 				// String
 
-				writeString(this.row0, dos);
+				writeString(this.A, dos);
 
 				// String
 
-				writeString(this.row1, dos);
+				writeString(this.B, dos);
 
 				// String
 
-				writeString(this.row2, dos);
+				writeString(this.C, dos);
 
 				// String
 
-				writeString(this.row3, dos);
+				writeString(this.D, dos);
 
 				// String
 
-				writeString(this.row4, dos);
+				writeString(this.E, dos);
 
 				// String
 
-				writeString(this.row5, dos);
+				writeString(this.F, dos);
+
+				// String
+
+				writeString(this.G, dos);
+
+				// String
+
+				writeString(this.H, dos);
+
+				// String
+
+				writeString(this.I, dos);
+
+				// String
+
+				writeString(this.J, dos);
+
+				// String
+
+				writeString(this.K, dos);
+
+				// String
+
+				writeString(this.L, dos);
+
+				// String
+
+				writeString(this.M, dos);
+
+				// String
+
+				writeString(this.N, dos);
+
+				// String
+
+				writeString(this.O, dos);
+
+				// String
+
+				writeString(this.P, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -425,12 +545,22 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 			StringBuilder sb = new StringBuilder();
 			sb.append(super.toString());
 			sb.append("[");
-			sb.append("row0=" + row0);
-			sb.append(",row1=" + row1);
-			sb.append(",row2=" + row2);
-			sb.append(",row3=" + row3);
-			sb.append(",row4=" + row4);
-			sb.append(",row5=" + row5);
+			sb.append("A=" + A);
+			sb.append(",B=" + B);
+			sb.append(",C=" + C);
+			sb.append(",D=" + D);
+			sb.append(",E=" + E);
+			sb.append(",F=" + F);
+			sb.append(",G=" + G);
+			sb.append(",H=" + H);
+			sb.append(",I=" + I);
+			sb.append(",J=" + J);
+			sb.append(",K=" + K);
+			sb.append(",L=" + L);
+			sb.append(",M=" + M);
+			sb.append(",N=" + N);
+			sb.append(",O=" + O);
+			sb.append(",P=" + P);
 			sb.append("]");
 
 			return sb.toString();
@@ -469,8 +599,8 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 	}
 
-	public void tFileInputDelimitedProcess(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFileInputDelimited_SUBPROCESS_STATE", 0);
+	public void tFileInputExcelProcess(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFileInputExcel_SUBPROCESS_STATE", 0);
 
 		final boolean execStat = this.execStat;
 
@@ -504,7 +634,7 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 				String fileName_tFileOutputDelimited = "";
 				fileName_tFileOutputDelimited = (new java.io.File(
-						"C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/analyse-securite-routiere/ACCIDENT_ROUTE/temp/preview/Departement.csv"))
+						"C:/Talend/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/analyse-securite-routiere/ACCIDENT_ROUTE/temp/preview/Caracteristiques.csv"))
 								.getAbsolutePath().replace("\\", "/");
 				String fullName_tFileOutputDelimited = null;
 				String extension_tFileOutputDelimited = null;
@@ -537,7 +667,7 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited = true;
 				java.io.File filetFileOutputDelimited = new java.io.File(fileName_tFileOutputDelimited);
 				globalMap.put("tFileOutputDelimited_FILE_NAME", fileName_tFileOutputDelimited);
-				String[] headColutFileOutputDelimited = new String[6];
+				String[] headColutFileOutputDelimited = new String[16];
 				class CSVBasicSet_tFileOutputDelimited {
 					private char field_Delim;
 					private char row_Delim;
@@ -654,7 +784,7 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 				}
 				CsvWritertFileOutputDelimited = new com.talend.csv.CSVWriter(
 						new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-								new java.io.FileOutputStream(fileName_tFileOutputDelimited, false), "ISO-8859-15")));
+								new java.io.FileOutputStream(fileName_tFileOutputDelimited, false), "UTF-8")));
 				CsvWritertFileOutputDelimited.setSeparator(csvSettings_tFileOutputDelimited.getFieldDelim());
 				if (csvSettings_tFileOutputDelimited.isUseCRLFRecordDelimiter()) {
 					CsvWritertFileOutputDelimited.setLineEnd("\r\n");
@@ -673,197 +803,553 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 				 */
 
 				/**
-				 * [tFileInputDelimited begin ] start
+				 * [tFileInputExcel begin ] start
 				 */
 
-				ok_Hash.put("tFileInputDelimited", false);
-				start_Hash.put("tFileInputDelimited", System.currentTimeMillis());
+				ok_Hash.put("tFileInputExcel", false);
+				start_Hash.put("tFileInputExcel", System.currentTimeMillis());
 
-				currentComponent = "tFileInputDelimited";
+				currentComponent = "tFileInputExcel";
 
-				int tos_count_tFileInputDelimited = 0;
+				int tos_count_tFileInputExcel = 0;
 
-				final routines.system.RowState rowstate_tFileInputDelimited = new routines.system.RowState();
+				final String decryptedPassword_tFileInputExcel = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:Q4CSRAKkZe2NSOQzMyMN7Rkw09I1PZo7yDLeGg==");
+				String password_tFileInputExcel = decryptedPassword_tFileInputExcel;
+				if (password_tFileInputExcel.isEmpty()) {
+					password_tFileInputExcel = null;
+				}
+				class RegexUtil_tFileInputExcel {
 
-				int nb_line_tFileInputDelimited = 0;
-				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited = null;
-				int limit_tFileInputDelimited = 50;
-				try {
+					public java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> getSheets(
+							org.apache.poi.xssf.usermodel.XSSFWorkbook workbook, String oneSheetName,
+							boolean useRegex) {
 
-					Object filename_tFileInputDelimited = "C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Departement.txt";
-					if (filename_tFileInputDelimited instanceof java.io.InputStream) {
+						java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> list = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
 
-						int footer_value_tFileInputDelimited = 0, random_value_tFileInputDelimited = -1;
-						if (footer_value_tFileInputDelimited > 0 || random_value_tFileInputDelimited > 0) {
-							throw new java.lang.Exception(
-									"When the input source is a stream,footer and random shouldn't be bigger than 0.");
-						}
+						if (useRegex) {// this part process the regex issue
 
-					}
-					try {
-						fid_tFileInputDelimited = new org.talend.fileprocess.FileInputDelimited(
-								"C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Departement.txt",
-								"ISO-8859-15", "\t", "\n", false, 0, 0, limit_tFileInputDelimited, -1, false);
-					} catch (java.lang.Exception e) {
-
-						System.err.println(e.getMessage());
-
-					}
-
-					while (fid_tFileInputDelimited != null && fid_tFileInputDelimited.nextRecord()) {
-						rowstate_tFileInputDelimited.reset();
-
-						Row = null;
-
-						boolean whetherReject_tFileInputDelimited = false;
-						Row = new RowStruct();
-						try {
-
-							int columnIndexWithD_tFileInputDelimited = 0;
-
-							columnIndexWithD_tFileInputDelimited = 0;
-
-							Row.row0 = fid_tFileInputDelimited.get(columnIndexWithD_tFileInputDelimited);
-
-							columnIndexWithD_tFileInputDelimited = 1;
-
-							Row.row1 = fid_tFileInputDelimited.get(columnIndexWithD_tFileInputDelimited);
-
-							columnIndexWithD_tFileInputDelimited = 2;
-
-							Row.row2 = fid_tFileInputDelimited.get(columnIndexWithD_tFileInputDelimited);
-
-							columnIndexWithD_tFileInputDelimited = 3;
-
-							Row.row3 = fid_tFileInputDelimited.get(columnIndexWithD_tFileInputDelimited);
-
-							columnIndexWithD_tFileInputDelimited = 4;
-
-							Row.row4 = fid_tFileInputDelimited.get(columnIndexWithD_tFileInputDelimited);
-
-							columnIndexWithD_tFileInputDelimited = 5;
-
-							Row.row5 = fid_tFileInputDelimited.get(columnIndexWithD_tFileInputDelimited);
-
-							if (rowstate_tFileInputDelimited.getException() != null) {
-								throw rowstate_tFileInputDelimited.getException();
+							java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(oneSheetName);
+							for (org.apache.poi.ss.usermodel.Sheet sheet : workbook) {
+								String sheetName = sheet.getSheetName();
+								java.util.regex.Matcher matcher = pattern.matcher(sheetName);
+								if (matcher.matches()) {
+									if (sheet != null) {
+										list.add((org.apache.poi.xssf.usermodel.XSSFSheet) sheet);
+									}
+								}
 							}
 
-						} catch (java.lang.Exception e) {
-							whetherReject_tFileInputDelimited = true;
+						} else {
+							org.apache.poi.xssf.usermodel.XSSFSheet sheet = (org.apache.poi.xssf.usermodel.XSSFSheet) workbook
+									.getSheet(oneSheetName);
+							if (sheet != null) {
+								list.add(sheet);
+							}
 
-							System.err.println(e.getMessage());
+						}
+
+						return list;
+					}
+
+					public java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> getSheets(
+							org.apache.poi.xssf.usermodel.XSSFWorkbook workbook, int index, boolean useRegex) {
+						java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> list = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+						org.apache.poi.xssf.usermodel.XSSFSheet sheet = (org.apache.poi.xssf.usermodel.XSSFSheet) workbook
+								.getSheetAt(index);
+						if (sheet != null) {
+							list.add(sheet);
+						}
+						return list;
+					}
+
+				}
+				RegexUtil_tFileInputExcel regexUtil_tFileInputExcel = new RegexUtil_tFileInputExcel();
+
+				Object source_tFileInputExcel = "C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Caracteristiques.xlsx";
+				org.apache.poi.xssf.usermodel.XSSFWorkbook workbook_tFileInputExcel = null;
+
+				if (source_tFileInputExcel instanceof String) {
+					workbook_tFileInputExcel = (org.apache.poi.xssf.usermodel.XSSFWorkbook) org.apache.poi.ss.usermodel.WorkbookFactory
+							.create(new java.io.File((String) source_tFileInputExcel), password_tFileInputExcel);
+				} else if (source_tFileInputExcel instanceof java.io.InputStream) {
+					workbook_tFileInputExcel = (org.apache.poi.xssf.usermodel.XSSFWorkbook) org.apache.poi.ss.usermodel.WorkbookFactory
+							.create((java.io.InputStream) source_tFileInputExcel, password_tFileInputExcel);
+				} else {
+					workbook_tFileInputExcel = null;
+					throw new java.lang.Exception("The data source should be specified as Inputstream or File Path!");
+				}
+				try {
+
+					java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> sheetList_tFileInputExcel = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+					for (org.apache.poi.ss.usermodel.Sheet sheet_tFileInputExcel : workbook_tFileInputExcel) {
+						sheetList_tFileInputExcel.add((org.apache.poi.xssf.usermodel.XSSFSheet) sheet_tFileInputExcel);
+					}
+					if (sheetList_tFileInputExcel.size() <= 0) {
+						throw new RuntimeException("Special sheets not exist!");
+					}
+
+					java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> sheetList_FilterNull_tFileInputExcel = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+					for (org.apache.poi.xssf.usermodel.XSSFSheet sheet_FilterNull_tFileInputExcel : sheetList_tFileInputExcel) {
+						if (sheet_FilterNull_tFileInputExcel != null
+								&& sheetList_FilterNull_tFileInputExcel.iterator() != null
+								&& sheet_FilterNull_tFileInputExcel.iterator().hasNext()) {
+							sheetList_FilterNull_tFileInputExcel.add(sheet_FilterNull_tFileInputExcel);
+						}
+					}
+					sheetList_tFileInputExcel = sheetList_FilterNull_tFileInputExcel;
+					if (sheetList_tFileInputExcel.size() > 0) {
+						int nb_line_tFileInputExcel = 0;
+
+						int begin_line_tFileInputExcel = 0;
+
+						int footer_input_tFileInputExcel = 0;
+
+						int end_line_tFileInputExcel = 0;
+						for (org.apache.poi.xssf.usermodel.XSSFSheet sheet_tFileInputExcel : sheetList_tFileInputExcel) {
+							end_line_tFileInputExcel += (sheet_tFileInputExcel.getLastRowNum() + 1);
+						}
+						end_line_tFileInputExcel -= footer_input_tFileInputExcel;
+						int limit_tFileInputExcel = 50;
+						int start_column_tFileInputExcel = 1 - 1;
+						int end_column_tFileInputExcel = -1;
+
+						org.apache.poi.xssf.usermodel.XSSFRow row_tFileInputExcel = null;
+						org.apache.poi.xssf.usermodel.XSSFSheet sheet_tFileInputExcel = sheetList_tFileInputExcel
+								.get(0);
+						int rowCount_tFileInputExcel = 0;
+						int sheetIndex_tFileInputExcel = 0;
+						int currentRows_tFileInputExcel = (sheetList_tFileInputExcel.get(0).getLastRowNum() + 1);
+
+						// for the number format
+						java.text.DecimalFormat df_tFileInputExcel = new java.text.DecimalFormat(
+								"#.####################################");
+						char decimalChar_tFileInputExcel = df_tFileInputExcel.getDecimalFormatSymbols()
+								.getDecimalSeparator();
+
+						for (int i_tFileInputExcel = begin_line_tFileInputExcel; i_tFileInputExcel < end_line_tFileInputExcel; i_tFileInputExcel++) {
+
+							int emptyColumnCount_tFileInputExcel = 0;
+
+							if (limit_tFileInputExcel != -1 && nb_line_tFileInputExcel >= limit_tFileInputExcel) {
+								break;
+							}
+
+							while (i_tFileInputExcel >= rowCount_tFileInputExcel + currentRows_tFileInputExcel) {
+								rowCount_tFileInputExcel += currentRows_tFileInputExcel;
+								sheet_tFileInputExcel = sheetList_tFileInputExcel.get(++sheetIndex_tFileInputExcel);
+								currentRows_tFileInputExcel = (sheet_tFileInputExcel.getLastRowNum() + 1);
+							}
+							globalMap.put("tFileInputExcel_CURRENT_SHEET", sheet_tFileInputExcel.getSheetName());
+							if (rowCount_tFileInputExcel <= i_tFileInputExcel) {
+								row_tFileInputExcel = sheet_tFileInputExcel
+										.getRow(i_tFileInputExcel - rowCount_tFileInputExcel);
+							}
 							Row = null;
+							int tempRowLength_tFileInputExcel = 16;
 
-						}
+							int columnIndex_tFileInputExcel = 0;
 
-						/**
-						 * [tFileInputDelimited begin ] stop
-						 */
+							String[] temp_row_tFileInputExcel = new String[tempRowLength_tFileInputExcel];
+							int excel_end_column_tFileInputExcel;
+							if (row_tFileInputExcel == null) {
+								excel_end_column_tFileInputExcel = 0;
+							} else {
+								excel_end_column_tFileInputExcel = row_tFileInputExcel.getLastCellNum();
+							}
+							int actual_end_column_tFileInputExcel;
+							if (end_column_tFileInputExcel == -1) {
+								actual_end_column_tFileInputExcel = excel_end_column_tFileInputExcel;
+							} else {
+								actual_end_column_tFileInputExcel = end_column_tFileInputExcel > excel_end_column_tFileInputExcel
+										? excel_end_column_tFileInputExcel
+										: end_column_tFileInputExcel;
+							}
+							org.apache.poi.ss.formula.eval.NumberEval ne_tFileInputExcel = null;
+							for (int i = 0; i < tempRowLength_tFileInputExcel; i++) {
+								if (i + start_column_tFileInputExcel < actual_end_column_tFileInputExcel) {
+									org.apache.poi.ss.usermodel.Cell cell_tFileInputExcel = row_tFileInputExcel
+											.getCell(i + start_column_tFileInputExcel);
+									if (cell_tFileInputExcel != null) {
+										switch (cell_tFileInputExcel.getCellType()) {
+										case STRING:
+											temp_row_tFileInputExcel[i] = cell_tFileInputExcel.getRichStringCellValue()
+													.getString();
+											break;
+										case NUMERIC:
+											if (org.apache.poi.ss.usermodel.DateUtil
+													.isCellDateFormatted(cell_tFileInputExcel)) {
+												temp_row_tFileInputExcel[i] = cell_tFileInputExcel.getDateCellValue()
+														.toString();
+											} else {
+												temp_row_tFileInputExcel[i] = df_tFileInputExcel
+														.format(cell_tFileInputExcel.getNumericCellValue());
+											}
+											break;
+										case BOOLEAN:
+											temp_row_tFileInputExcel[i] = String
+													.valueOf(cell_tFileInputExcel.getBooleanCellValue());
+											break;
+										case FORMULA:
+											switch (cell_tFileInputExcel.getCachedFormulaResultType()) {
+											case STRING:
+												temp_row_tFileInputExcel[i] = cell_tFileInputExcel
+														.getRichStringCellValue().getString();
+												break;
+											case NUMERIC:
+												if (org.apache.poi.ss.usermodel.DateUtil
+														.isCellDateFormatted(cell_tFileInputExcel)) {
+													temp_row_tFileInputExcel[i] = cell_tFileInputExcel
+															.getDateCellValue().toString();
+												} else {
+													ne_tFileInputExcel = new org.apache.poi.ss.formula.eval.NumberEval(
+															cell_tFileInputExcel.getNumericCellValue());
+													temp_row_tFileInputExcel[i] = ne_tFileInputExcel.getStringValue();
+												}
+												break;
+											case BOOLEAN:
+												temp_row_tFileInputExcel[i] = String
+														.valueOf(cell_tFileInputExcel.getBooleanCellValue());
+												break;
+											default:
+												temp_row_tFileInputExcel[i] = "";
+											}
+											break;
+										default:
+											temp_row_tFileInputExcel[i] = "";
+										}
+									} else {
+										temp_row_tFileInputExcel[i] = "";
+									}
 
-						/**
-						 * [tFileInputDelimited main ] start
-						 */
+								} else {
+									temp_row_tFileInputExcel[i] = "";
+								}
+							}
+							boolean whetherReject_tFileInputExcel = false;
+							Row = new RowStruct();
+							int curColNum_tFileInputExcel = -1;
+							String curColName_tFileInputExcel = "";
+							try {
+								columnIndex_tFileInputExcel = 0;
 
-						currentComponent = "tFileInputDelimited";
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "A";
 
-						tos_count_tFileInputDelimited++;
+									Row.A = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.A = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 1;
 
-						/**
-						 * [tFileInputDelimited main ] stop
-						 */
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "B";
 
-						/**
-						 * [tFileInputDelimited process_data_begin ] start
-						 */
+									Row.B = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.B = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 2;
 
-						currentComponent = "tFileInputDelimited";
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "C";
 
-						/**
-						 * [tFileInputDelimited process_data_begin ] stop
-						 */
+									Row.C = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.C = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 3;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "D";
+
+									Row.D = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.D = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 4;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "E";
+
+									Row.E = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.E = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 5;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "F";
+
+									Row.F = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.F = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 6;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "G";
+
+									Row.G = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.G = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 7;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "H";
+
+									Row.H = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.H = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 8;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "I";
+
+									Row.I = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.I = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 9;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "J";
+
+									Row.J = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.J = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 10;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "K";
+
+									Row.K = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.K = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 11;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "L";
+
+									Row.L = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.L = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 12;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "M";
+
+									Row.M = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.M = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 13;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "N";
+
+									Row.N = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.N = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 14;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "O";
+
+									Row.O = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.O = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+								columnIndex_tFileInputExcel = 15;
+
+								if (temp_row_tFileInputExcel[columnIndex_tFileInputExcel].length() > 0) {
+									curColNum_tFileInputExcel = columnIndex_tFileInputExcel
+											+ start_column_tFileInputExcel + 1;
+									curColName_tFileInputExcel = "P";
+
+									Row.P = temp_row_tFileInputExcel[columnIndex_tFileInputExcel];
+								} else {
+									Row.P = null;
+									emptyColumnCount_tFileInputExcel++;
+								}
+
+								nb_line_tFileInputExcel++;
+
+							} catch (java.lang.Exception e) {
+								whetherReject_tFileInputExcel = true;
+								System.err.println(e.getMessage());
+								Row = null;
+							}
+
+							/**
+							 * [tFileInputExcel begin ] stop
+							 */
+
+							/**
+							 * [tFileInputExcel main ] start
+							 */
+
+							currentComponent = "tFileInputExcel";
+
+							tos_count_tFileInputExcel++;
+
+							/**
+							 * [tFileInputExcel main ] stop
+							 */
+
+							/**
+							 * [tFileInputExcel process_data_begin ] start
+							 */
+
+							currentComponent = "tFileInputExcel";
+
+							/**
+							 * [tFileInputExcel process_data_begin ] stop
+							 */
 // Start of branch "Row"
-						if (Row != null) {
+							if (Row != null) {
+
+								/**
+								 * [tFileOutputDelimited main ] start
+								 */
+
+								currentComponent = "tFileOutputDelimited";
+
+								String[] rowtFileOutputDelimited = new String[16];
+								rowtFileOutputDelimited[0] = Row.A == null ? null : Row.A;
+								rowtFileOutputDelimited[1] = Row.B == null ? null : Row.B;
+								rowtFileOutputDelimited[2] = Row.C == null ? null : Row.C;
+								rowtFileOutputDelimited[3] = Row.D == null ? null : Row.D;
+								rowtFileOutputDelimited[4] = Row.E == null ? null : Row.E;
+								rowtFileOutputDelimited[5] = Row.F == null ? null : Row.F;
+								rowtFileOutputDelimited[6] = Row.G == null ? null : Row.G;
+								rowtFileOutputDelimited[7] = Row.H == null ? null : Row.H;
+								rowtFileOutputDelimited[8] = Row.I == null ? null : Row.I;
+								rowtFileOutputDelimited[9] = Row.J == null ? null : Row.J;
+								rowtFileOutputDelimited[10] = Row.K == null ? null : Row.K;
+								rowtFileOutputDelimited[11] = Row.L == null ? null : Row.L;
+								rowtFileOutputDelimited[12] = Row.M == null ? null : Row.M;
+								rowtFileOutputDelimited[13] = Row.N == null ? null : Row.N;
+								rowtFileOutputDelimited[14] = Row.O == null ? null : Row.O;
+								rowtFileOutputDelimited[15] = Row.P == null ? null : Row.P;
+								nb_line_tFileOutputDelimited++;
+								resourceMap.put("nb_line_tFileOutputDelimited", nb_line_tFileOutputDelimited);
+								CsvWritertFileOutputDelimited.writeNext(rowtFileOutputDelimited);
+
+								tos_count_tFileOutputDelimited++;
+
+								/**
+								 * [tFileOutputDelimited main ] stop
+								 */
+
+								/**
+								 * [tFileOutputDelimited process_data_begin ] start
+								 */
+
+								currentComponent = "tFileOutputDelimited";
+
+								/**
+								 * [tFileOutputDelimited process_data_begin ] stop
+								 */
+
+								/**
+								 * [tFileOutputDelimited process_data_end ] start
+								 */
+
+								currentComponent = "tFileOutputDelimited";
+
+								/**
+								 * [tFileOutputDelimited process_data_end ] stop
+								 */
+
+							} // End of branch "Row"
 
 							/**
-							 * [tFileOutputDelimited main ] start
+							 * [tFileInputExcel process_data_end ] start
 							 */
 
-							currentComponent = "tFileOutputDelimited";
-
-							String[] rowtFileOutputDelimited = new String[6];
-							rowtFileOutputDelimited[0] = Row.row0 == null ? null : Row.row0;
-							rowtFileOutputDelimited[1] = Row.row1 == null ? null : Row.row1;
-							rowtFileOutputDelimited[2] = Row.row2 == null ? null : Row.row2;
-							rowtFileOutputDelimited[3] = Row.row3 == null ? null : Row.row3;
-							rowtFileOutputDelimited[4] = Row.row4 == null ? null : Row.row4;
-							rowtFileOutputDelimited[5] = Row.row5 == null ? null : Row.row5;
-							nb_line_tFileOutputDelimited++;
-							resourceMap.put("nb_line_tFileOutputDelimited", nb_line_tFileOutputDelimited);
-							CsvWritertFileOutputDelimited.writeNext(rowtFileOutputDelimited);
-
-							tos_count_tFileOutputDelimited++;
+							currentComponent = "tFileInputExcel";
 
 							/**
-							 * [tFileOutputDelimited main ] stop
+							 * [tFileInputExcel process_data_end ] stop
 							 */
 
 							/**
-							 * [tFileOutputDelimited process_data_begin ] start
+							 * [tFileInputExcel end ] start
 							 */
 
-							currentComponent = "tFileOutputDelimited";
+							currentComponent = "tFileInputExcel";
 
-							/**
-							 * [tFileOutputDelimited process_data_begin ] stop
-							 */
-
-							/**
-							 * [tFileOutputDelimited process_data_end ] start
-							 */
-
-							currentComponent = "tFileOutputDelimited";
-
-							/**
-							 * [tFileOutputDelimited process_data_end ] stop
-							 */
-
-						} // End of branch "Row"
-
-						/**
-						 * [tFileInputDelimited process_data_end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited";
-
-						/**
-						 * [tFileInputDelimited process_data_end ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited";
-
-					}
-				} finally {
-					if (!((Object) ("C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Departement.txt") instanceof java.io.InputStream)) {
-						if (fid_tFileInputDelimited != null) {
-							fid_tFileInputDelimited.close();
 						}
-					}
-					if (fid_tFileInputDelimited != null) {
-						globalMap.put("tFileInputDelimited_NB_LINE", fid_tFileInputDelimited.getRowNumber());
+
+						globalMap.put("tFileInputExcel_NB_LINE", nb_line_tFileInputExcel);
 
 					}
+
+				} finally {
+
+					if (!(source_tFileInputExcel instanceof java.io.InputStream)) {
+						workbook_tFileInputExcel.getPackage().revert();
+					}
+
 				}
 
-				ok_Hash.put("tFileInputDelimited", true);
-				end_Hash.put("tFileInputDelimited", System.currentTimeMillis());
+				ok_Hash.put("tFileInputExcel", true);
+				end_Hash.put("tFileInputExcel", System.currentTimeMillis());
 
 				/**
-				 * [tFileInputDelimited end ] stop
+				 * [tFileInputExcel end ] stop
 				 */
 
 				/**
@@ -902,13 +1388,13 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 			try {
 
 				/**
-				 * [tFileInputDelimited finally ] start
+				 * [tFileInputExcel finally ] start
 				 */
 
-				currentComponent = "tFileInputDelimited";
+				currentComponent = "tFileInputExcel";
 
 				/**
-				 * [tFileInputDelimited finally ] stop
+				 * [tFileInputExcel finally ] stop
 				 */
 
 				/**
@@ -940,7 +1426,7 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 			resourceMap = null;
 		}
 
-		globalMap.put("tFileInputDelimited_SUBPROCESS_STATE", 1);
+		globalMap.put("tFileInputExcel_SUBPROCESS_STATE", 1);
 	}
 
 	public String resuming_logs_dir_path = null;
@@ -1115,14 +1601,14 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 		try {
 			errorCode = null;
-			tFileInputDelimitedProcess(globalMap);
+			tFileInputExcelProcess(globalMap);
 			if (!"failure".equals(status)) {
 				status = "end";
 			}
-		} catch (TalendException e_tFileInputDelimited) {
-			globalMap.put("tFileInputDelimited_SUBPROCESS_STATE", -1);
+		} catch (TalendException e_tFileInputExcel) {
+			globalMap.put("tFileInputExcel_SUBPROCESS_STATE", -1);
 
-			e_tFileInputDelimited.printStackTrace();
+			e_tFileInputExcel.printStackTrace();
 
 		}
 
@@ -1273,6 +1759,6 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 44258 characters generated by Talend Open Studio for Data Integration on the
- * 3 avril 2020 à 15:47:41 CEST
+ * 60768 characters generated by Talend Open Studio for Data Integration on the
+ * 6 avril 2020 à 13:16:32 CEST
  ************************************************************************************************/

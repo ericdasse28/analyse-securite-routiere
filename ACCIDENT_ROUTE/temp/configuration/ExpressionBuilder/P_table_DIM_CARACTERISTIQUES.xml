@@ -1,35 +1,9 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):&#xA;StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;01&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;A&quot;:StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;02&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;B&quot;:caracteristiques_U.dep">
-  <variables name="caracteristiques_U.Num_Acc" value="null" talendType="id_Long" nullable="true"/>
-  <variables name="caracteristiques_U.an" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.mois" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.jour" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.hrmn" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.lum" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.agg" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.Column7" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.atm" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.col" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.Column10" value="null" talendType="id_String" nullable="true"/>
-  <variables name="caracteristiques_U.adr" value="null" talendType="id_String" nullable="true"/>
-  <variables name="caracteristiques_U.gps" value="null" talendType="id_Character" nullable="true"/>
-  <variables name="caracteristiques_U.lat" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="caracteristiques_U.Column14" value="null" talendType="id_String" nullable="true"/>
-  <variables name="caracteristiques_U.dep" value="null" talendType="id_Integer" nullable="true"/>
-  <variables name="" value="0" talendType="id_Integer"/>
-  <variables name="String.format(&quot;%02d&quot;, Int.parseInt(caracteristiques_U.mois)) " value="null" talendType="id_String"/>
-  <variables name="String.format(&quot;%02d&quot;, Int.parseInt(caracteristiques_U.jour)) " value="null" talendType="id_String"/>
-  <variables name="String.format(&quot;%1$02s&quot;, caracteristiques_U.mois).replace(' ','0') " value="null" talendType="id_String"/>
-  <variables name="String.format(&quot;%1$2s&quot;, caracteristiques_U.mois).replace(' ','0') " value="null" talendType="id_String"/>
-  <variables name="String.format(&quot;%1$2s&quot;, caracteristiques_U.jour).replace(' ','0') " value="null" talendType="id_String"/>
-  <variables name="String.format(&quot;%1$3s&quot;, caracteristiques_U.dep).replace(' ','0')&#xD;&#xA;&#xD;&#xA;Numeric.removeSequence(&quot;s1&quot;) " value="null" talendType="id_String"/>
-  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(0,&quot;&quot;) " value="null" talendType="id_String"/>
-  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(0,&quot;&quot;)) " value="null" talendType="id_String"/>
-  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(&quot;0&quot;,&quot;&quot;)) " value="null" talendType="id_String"/>
-  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll([0],&quot;&quot;)) " value="null" talendType="id_String"/>
-  <variables name="StringHandling.LEFT(caracteristiques_U.dep.replaceAll(&quot;[0]&quot;,&quot;&quot;)) " value="null" talendType="id_String"/>
-  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1)&#xD;&#xA;StringHandling.LEFT(&quot;hello world!&quot;,5) &#xD;&#xA;StringHandling.RTRIM(string[, trim_set])&#xD;&#xA;caracteristiques_U.dep.replaceFirst(&quot;0&quot;,&quot;&quot;) " value="null" talendType="id_String"/>
-  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):caracteristiques_U.dep " value="null" talendType="id_String"/>
-  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):caracteristiques_U.dep&#xD;&#xA;||&#xD;&#xA;StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;01&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;A&quot;:caracteristiques_U.dep " value="null" talendType="id_String"/>
-  <variables name="StringHandling.RIGHT(caracteristiques_U.dep,1).equals(&quot;0&quot;)? StringHandling.LEFT(caracteristiques_U.dep,2):&#xD;&#xA;StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;01&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;A&quot;:StringHandling.RIGHT(caracteristiques_U.dep,2).equals(&quot;02&quot;)? StringHandling.LEFT(caracteristiques_U.dep,1)+&quot;B&quot;:caracteristiques_U.dep " value="null" talendType="id_String"/>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_2=>" expression="StringHandling.LEN(P_DIM_caracteristiques.dep)==1?&quot;0&quot;+P_DIM_caracteristiques.dep:P_DIM_caracteristiques.dep">
+  <variables name="P_DIM_caracteristiques.Num_Acc" value="null" talendType="id_Long" nullable="true"/>
+  <variables name="P_DIM_caracteristiques.id_Date" value="null" talendType="id_String" nullable="true"/>
+  <variables name="P_DIM_caracteristiques.loc" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="P_DIM_caracteristiques.atm" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="P_DIM_caracteristiques.col" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="P_DIM_caracteristiques.dep" value="null" talendType="id_String" nullable="true"/>
 </expression:EMFExpression>

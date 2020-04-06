@@ -261,14 +261,14 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 		}
 	}
 
-	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
+	public void tFileInputExcel_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
 
 		status = "failure";
 
-		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tUniqRow_1_error(Exception exception, String errorComponent,
@@ -278,7 +278,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 		status = "failure";
 
-		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
@@ -288,7 +288,17 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 		status = "failure";
 
-		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMap_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tFileOutputDelimited_1_error(Exception exception, String errorComponent,
@@ -298,10 +308,10 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 		status = "failure";
 
-		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+		tFileInputExcel_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent,
+	public void tFileInputExcel_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -309,8 +319,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 	}
 
-	public static class P_DIM_caracteristiquesStruct
-			implements routines.system.IPersistableRow<P_DIM_caracteristiquesStruct> {
+	public static class caracteristiquesStruct implements routines.system.IPersistableRow<caracteristiquesStruct> {
 		final static byte[] commonByteArrayLock_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[0];
 		static byte[] commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -378,7 +387,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final P_DIM_caracteristiquesStruct other = (P_DIM_caracteristiquesStruct) obj;
+			final caracteristiquesStruct other = (caracteristiquesStruct) obj;
 
 			if (this.Num_Acc == null) {
 				if (other.Num_Acc != null)
@@ -391,7 +400,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(P_DIM_caracteristiquesStruct other) {
+		public void copyDataTo(caracteristiquesStruct other) {
 
 			other.Num_Acc = this.Num_Acc;
 			other.id_Date = this.id_Date;
@@ -402,10 +411,229 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 		}
 
-		public void copyKeysDataTo(P_DIM_caracteristiquesStruct other) {
+		public void copyKeysDataTo(caracteristiquesStruct other) {
 
 			other.Num_Acc = this.Num_Acc;
 
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES.length) {
+					if (length < 1024 && commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES.length == 0) {
+						commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[1024];
+					} else {
+						commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES, 0, length);
+				strReturn = new String(commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES) {
+
+				try {
+
+					int length = 0;
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.Num_Acc = null;
+					} else {
+						this.Num_Acc = dis.readLong();
+					}
+
+					this.id_Date = readString(dis);
+
+					this.loc = readInteger(dis);
+
+					this.atm = readInteger(dis);
+
+					this.col = readInteger(dis);
+
+					this.dep = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Long
+
+				if (this.Num_Acc == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.Num_Acc);
+				}
+
+				// String
+
+				writeString(this.id_Date, dos);
+
+				// Integer
+
+				writeInteger(this.loc, dos);
+
+				// Integer
+
+				writeInteger(this.atm, dos);
+
+				// Integer
+
+				writeInteger(this.col, dos);
+
+				// String
+
+				writeString(this.dep, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("Num_Acc=" + String.valueOf(Num_Acc));
+			sb.append(",id_Date=" + id_Date);
+			sb.append(",loc=" + String.valueOf(loc));
+			sb.append(",atm=" + String.valueOf(atm));
+			sb.append(",col=" + String.valueOf(col));
+			sb.append(",dep=" + dep);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(caracteristiquesStruct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.Num_Acc, other.Num_Acc);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class P_DIM_caracteristiquesStruct
+			implements routines.system.IPersistableRow<P_DIM_caracteristiquesStruct> {
+		final static byte[] commonByteArrayLock_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[0];
+		static byte[] commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[0];
+
+		public Long Num_Acc;
+
+		public Long getNum_Acc() {
+			return this.Num_Acc;
+		}
+
+		public String id_Date;
+
+		public String getId_Date() {
+			return this.id_Date;
+		}
+
+		public Integer loc;
+
+		public Integer getLoc() {
+			return this.loc;
+		}
+
+		public Integer atm;
+
+		public Integer getAtm() {
+			return this.atm;
+		}
+
+		public Integer col;
+
+		public Integer getCol() {
+			return this.col;
+		}
+
+		public String dep;
+
+		public String getDep() {
+			return this.dep;
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -555,11 +783,6 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 			int returnValue = -1;
 
-			returnValue = checkNullsAndCompare(this.Num_Acc, other.Num_Acc);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
 			return returnValue;
 		}
 
@@ -596,21 +819,21 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.Num_Acc;
 		}
 
-		public String an;
+		public Integer an;
 
-		public String getAn() {
+		public Integer getAn() {
 			return this.an;
 		}
 
-		public String mois;
+		public Integer mois;
 
-		public String getMois() {
+		public Integer getMois() {
 			return this.mois;
 		}
 
-		public String jour;
+		public Integer jour;
 
-		public String getJour() {
+		public Integer getJour() {
 			return this.jour;
 		}
 
@@ -626,16 +849,16 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.lum;
 		}
 
-		public Integer agg;
+		public Integer loc;
 
-		public Integer getAgg() {
-			return this.agg;
+		public Integer getLoc() {
+			return this.loc;
 		}
 
-		public Integer Column7;
+		public Integer Int;
 
-		public Integer getColumn7() {
-			return this.Column7;
+		public Integer getInt() {
+			return this.Int;
 		}
 
 		public Integer atm;
@@ -650,10 +873,10 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.col;
 		}
 
-		public String Column10;
+		public Integer com;
 
-		public String getColumn10() {
-			return this.Column10;
+		public Integer getCom() {
+			return this.com;
 		}
 
 		public String adr;
@@ -668,22 +891,43 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.gps;
 		}
 
-		public Integer lat;
+		public String lat;
 
-		public Integer getLat() {
+		public String getLat() {
 			return this.lat;
 		}
 
-		public String Column14;
+		public String Long;
 
-		public String getColumn14() {
-			return this.Column14;
+		public String getLong() {
+			return this.Long;
 		}
 
 		public String dep;
 
 		public String getDep() {
 			return this.dep;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -717,27 +961,6 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			}
 		}
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
 		public void readData(ObjectInputStream dis) {
 
 			synchronized (commonByteArrayLock_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES) {
@@ -753,25 +976,25 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 						this.Num_Acc = dis.readLong();
 					}
 
-					this.an = readString(dis);
+					this.an = readInteger(dis);
 
-					this.mois = readString(dis);
+					this.mois = readInteger(dis);
 
-					this.jour = readString(dis);
+					this.jour = readInteger(dis);
 
 					this.hrmn = readInteger(dis);
 
 					this.lum = readInteger(dis);
 
-					this.agg = readInteger(dis);
+					this.loc = readInteger(dis);
 
-					this.Column7 = readInteger(dis);
+					this.Int = readInteger(dis);
 
 					this.atm = readInteger(dis);
 
 					this.col = readInteger(dis);
 
-					this.Column10 = readString(dis);
+					this.com = readInteger(dis);
 
 					this.adr = readString(dis);
 
@@ -782,9 +1005,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 						this.gps = dis.readChar();
 					}
 
-					this.lat = readInteger(dis);
+					this.lat = readString(dis);
 
-					this.Column14 = readString(dis);
+					this.Long = readString(dis);
 
 					this.dep = readString(dis);
 
@@ -809,17 +1032,17 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 					dos.writeLong(this.Num_Acc);
 				}
 
-				// String
+				// Integer
 
-				writeString(this.an, dos);
+				writeInteger(this.an, dos);
 
-				// String
+				// Integer
 
-				writeString(this.mois, dos);
+				writeInteger(this.mois, dos);
 
-				// String
+				// Integer
 
-				writeString(this.jour, dos);
+				writeInteger(this.jour, dos);
 
 				// Integer
 
@@ -831,11 +1054,11 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				// Integer
 
-				writeInteger(this.agg, dos);
+				writeInteger(this.loc, dos);
 
 				// Integer
 
-				writeInteger(this.Column7, dos);
+				writeInteger(this.Int, dos);
 
 				// Integer
 
@@ -845,9 +1068,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				writeInteger(this.col, dos);
 
-				// String
+				// Integer
 
-				writeString(this.Column10, dos);
+				writeInteger(this.com, dos);
 
 				// String
 
@@ -862,13 +1085,13 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 					dos.writeChar(this.gps);
 				}
 
-				// Integer
+				// String
 
-				writeInteger(this.lat, dos);
+				writeString(this.lat, dos);
 
 				// String
 
-				writeString(this.Column14, dos);
+				writeString(this.Long, dos);
 
 				// String
 
@@ -886,20 +1109,20 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("Num_Acc=" + String.valueOf(Num_Acc));
-			sb.append(",an=" + an);
-			sb.append(",mois=" + mois);
-			sb.append(",jour=" + jour);
+			sb.append(",an=" + String.valueOf(an));
+			sb.append(",mois=" + String.valueOf(mois));
+			sb.append(",jour=" + String.valueOf(jour));
 			sb.append(",hrmn=" + String.valueOf(hrmn));
 			sb.append(",lum=" + String.valueOf(lum));
-			sb.append(",agg=" + String.valueOf(agg));
-			sb.append(",Column7=" + String.valueOf(Column7));
+			sb.append(",loc=" + String.valueOf(loc));
+			sb.append(",Int=" + String.valueOf(Int));
 			sb.append(",atm=" + String.valueOf(atm));
 			sb.append(",col=" + String.valueOf(col));
-			sb.append(",Column10=" + Column10);
+			sb.append(",com=" + String.valueOf(com));
 			sb.append(",adr=" + adr);
 			sb.append(",gps=" + String.valueOf(gps));
-			sb.append(",lat=" + String.valueOf(lat));
-			sb.append(",Column14=" + Column14);
+			sb.append(",lat=" + lat);
+			sb.append(",Long=" + Long);
 			sb.append(",dep=" + dep);
 			sb.append("]");
 
@@ -939,7 +1162,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 	}
 
-	public static class caracteristiquesStruct implements routines.system.IPersistableRow<caracteristiquesStruct> {
+	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
 		final static byte[] commonByteArrayLock_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[0];
 		static byte[] commonByteArray_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -955,21 +1178,21 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.Num_Acc;
 		}
 
-		public String an;
+		public Integer an;
 
-		public String getAn() {
+		public Integer getAn() {
 			return this.an;
 		}
 
-		public String mois;
+		public Integer mois;
 
-		public String getMois() {
+		public Integer getMois() {
 			return this.mois;
 		}
 
-		public String jour;
+		public Integer jour;
 
-		public String getJour() {
+		public Integer getJour() {
 			return this.jour;
 		}
 
@@ -985,16 +1208,16 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.lum;
 		}
 
-		public Integer agg;
+		public Integer loc;
 
-		public Integer getAgg() {
-			return this.agg;
+		public Integer getLoc() {
+			return this.loc;
 		}
 
-		public Integer Column7;
+		public Integer Int;
 
-		public Integer getColumn7() {
-			return this.Column7;
+		public Integer getInt() {
+			return this.Int;
 		}
 
 		public Integer atm;
@@ -1009,10 +1232,10 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.col;
 		}
 
-		public String Column10;
+		public Integer com;
 
-		public String getColumn10() {
-			return this.Column10;
+		public Integer getCom() {
+			return this.com;
 		}
 
 		public String adr;
@@ -1027,16 +1250,16 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return this.gps;
 		}
 
-		public Integer lat;
+		public String lat;
 
-		public Integer getLat() {
+		public String getLat() {
 			return this.lat;
 		}
 
-		public String Column14;
+		public String Long;
 
-		public String getColumn14() {
-			return this.Column14;
+		public String getLong() {
+			return this.Long;
 		}
 
 		public String dep;
@@ -1067,7 +1290,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			final caracteristiquesStruct other = (caracteristiquesStruct) obj;
+			final row1Struct other = (row1Struct) obj;
 
 			if (this.Num_Acc == null) {
 				if (other.Num_Acc != null)
@@ -1080,7 +1303,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			return true;
 		}
 
-		public void copyDataTo(caracteristiquesStruct other) {
+		public void copyDataTo(row1Struct other) {
 
 			other.Num_Acc = this.Num_Acc;
 			other.an = this.an;
@@ -1088,23 +1311,44 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			other.jour = this.jour;
 			other.hrmn = this.hrmn;
 			other.lum = this.lum;
-			other.agg = this.agg;
-			other.Column7 = this.Column7;
+			other.loc = this.loc;
+			other.Int = this.Int;
 			other.atm = this.atm;
 			other.col = this.col;
-			other.Column10 = this.Column10;
+			other.com = this.com;
 			other.adr = this.adr;
 			other.gps = this.gps;
 			other.lat = this.lat;
-			other.Column14 = this.Column14;
+			other.Long = this.Long;
 			other.dep = this.dep;
 
 		}
 
-		public void copyKeysDataTo(caracteristiquesStruct other) {
+		public void copyKeysDataTo(row1Struct other) {
 
 			other.Num_Acc = this.Num_Acc;
 
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
 		}
 
 		private String readString(ObjectInputStream dis) throws IOException {
@@ -1138,27 +1382,6 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			}
 		}
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
 		public void readData(ObjectInputStream dis) {
 
 			synchronized (commonByteArrayLock_ACCIDENT_ROUTE_P_table_DIM_CARACTERISTIQUES) {
@@ -1174,25 +1397,25 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 						this.Num_Acc = dis.readLong();
 					}
 
-					this.an = readString(dis);
+					this.an = readInteger(dis);
 
-					this.mois = readString(dis);
+					this.mois = readInteger(dis);
 
-					this.jour = readString(dis);
+					this.jour = readInteger(dis);
 
 					this.hrmn = readInteger(dis);
 
 					this.lum = readInteger(dis);
 
-					this.agg = readInteger(dis);
+					this.loc = readInteger(dis);
 
-					this.Column7 = readInteger(dis);
+					this.Int = readInteger(dis);
 
 					this.atm = readInteger(dis);
 
 					this.col = readInteger(dis);
 
-					this.Column10 = readString(dis);
+					this.com = readInteger(dis);
 
 					this.adr = readString(dis);
 
@@ -1203,9 +1426,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 						this.gps = dis.readChar();
 					}
 
-					this.lat = readInteger(dis);
+					this.lat = readString(dis);
 
-					this.Column14 = readString(dis);
+					this.Long = readString(dis);
 
 					this.dep = readString(dis);
 
@@ -1230,17 +1453,17 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 					dos.writeLong(this.Num_Acc);
 				}
 
-				// String
+				// Integer
 
-				writeString(this.an, dos);
+				writeInteger(this.an, dos);
 
-				// String
+				// Integer
 
-				writeString(this.mois, dos);
+				writeInteger(this.mois, dos);
 
-				// String
+				// Integer
 
-				writeString(this.jour, dos);
+				writeInteger(this.jour, dos);
 
 				// Integer
 
@@ -1252,11 +1475,11 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				// Integer
 
-				writeInteger(this.agg, dos);
+				writeInteger(this.loc, dos);
 
 				// Integer
 
-				writeInteger(this.Column7, dos);
+				writeInteger(this.Int, dos);
 
 				// Integer
 
@@ -1266,9 +1489,9 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				writeInteger(this.col, dos);
 
-				// String
+				// Integer
 
-				writeString(this.Column10, dos);
+				writeInteger(this.com, dos);
 
 				// String
 
@@ -1283,13 +1506,13 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 					dos.writeChar(this.gps);
 				}
 
-				// Integer
+				// String
 
-				writeInteger(this.lat, dos);
+				writeString(this.lat, dos);
 
 				// String
 
-				writeString(this.Column14, dos);
+				writeString(this.Long, dos);
 
 				// String
 
@@ -1307,20 +1530,20 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("Num_Acc=" + String.valueOf(Num_Acc));
-			sb.append(",an=" + an);
-			sb.append(",mois=" + mois);
-			sb.append(",jour=" + jour);
+			sb.append(",an=" + String.valueOf(an));
+			sb.append(",mois=" + String.valueOf(mois));
+			sb.append(",jour=" + String.valueOf(jour));
 			sb.append(",hrmn=" + String.valueOf(hrmn));
 			sb.append(",lum=" + String.valueOf(lum));
-			sb.append(",agg=" + String.valueOf(agg));
-			sb.append(",Column7=" + String.valueOf(Column7));
+			sb.append(",loc=" + String.valueOf(loc));
+			sb.append(",Int=" + String.valueOf(Int));
 			sb.append(",atm=" + String.valueOf(atm));
 			sb.append(",col=" + String.valueOf(col));
-			sb.append(",Column10=" + Column10);
+			sb.append(",com=" + String.valueOf(com));
 			sb.append(",adr=" + adr);
 			sb.append(",gps=" + String.valueOf(gps));
-			sb.append(",lat=" + String.valueOf(lat));
-			sb.append(",Column14=" + Column14);
+			sb.append(",lat=" + lat);
+			sb.append(",Long=" + Long);
 			sb.append(",dep=" + dep);
 			sb.append("]");
 
@@ -1330,7 +1553,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 		/**
 		 * Compare keys
 		 */
-		public int compareTo(caracteristiquesStruct other) {
+		public int compareTo(row1Struct other) {
 
 			int returnValue = -1;
 
@@ -1365,8 +1588,8 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 	}
 
-	public void tFileInputDelimited_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 0);
+	public void tFileInputExcel_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", 0);
 
 		final boolean execStat = this.execStat;
 
@@ -1385,9 +1608,10 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
-				caracteristiquesStruct caracteristiques = new caracteristiquesStruct();
+				row1Struct row1 = new row1Struct();
 				caracteristiques_UStruct caracteristiques_U = new caracteristiques_UStruct();
 				P_DIM_caracteristiquesStruct P_DIM_caracteristiques = new P_DIM_caracteristiquesStruct();
+				caracteristiquesStruct caracteristiques = new caracteristiquesStruct();
 
 				/**
 				 * [tFileOutputDelimited_1 begin ] start
@@ -1399,7 +1623,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				currentComponent = "tFileOutputDelimited_1";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "P_DIM_caracteristiques");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "caracteristiques");
 				}
 
 				int tos_count_tFileOutputDelimited_1 = 0;
@@ -1439,9 +1663,6 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited_1 = true;
 				java.io.File filetFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
 				globalMap.put("tFileOutputDelimited_1_FILE_NAME", fileName_tFileOutputDelimited_1);
-				if (filetFileOutputDelimited_1.exists()) {
-					isFileGenerated_tFileOutputDelimited_1 = false;
-				}
 				int nb_line_tFileOutputDelimited_1 = 0;
 				int splitedFileNo_tFileOutputDelimited_1 = 0;
 				int currentRow_tFileOutputDelimited_1 = 0;
@@ -1468,8 +1689,12 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				// routines.system.Row
 				java.io.Writer outtFileOutputDelimited_1 = null;
 
+				java.io.File fileToDelete_tFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
+				if (fileToDelete_tFileOutputDelimited_1.exists()) {
+					fileToDelete_tFileOutputDelimited_1.delete();
+				}
 				outtFileOutputDelimited_1 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, true), "ISO-8859-15"));
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, false), "ISO-8859-15"));
 				if (filetFileOutputDelimited_1.length() == 0) {
 					outtFileOutputDelimited_1.write("Num_Acc");
 					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
@@ -1491,6 +1716,41 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				/**
 				 * [tFileOutputDelimited_1 begin ] stop
+				 */
+
+				/**
+				 * [tMap_2 begin ] start
+				 */
+
+				ok_Hash.put("tMap_2", false);
+				start_Hash.put("tMap_2", System.currentTimeMillis());
+
+				currentComponent = "tMap_2";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "P_DIM_caracteristiques");
+				}
+
+				int tos_count_tMap_2 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_2__Struct {
+				}
+				Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				caracteristiquesStruct caracteristiques_tmp = new caracteristiquesStruct();
+// ###############################
+
+				/**
+				 * [tMap_2 begin ] stop
 				 */
 
 				/**
@@ -1541,7 +1801,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				currentComponent = "tUniqRow_1";
 
 				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "caracteristiques");
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
 				}
 
 				int tos_count_tUniqRow_1 = 0;
@@ -1602,588 +1862,850 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				 */
 
 				/**
-				 * [tFileInputDelimited_1 begin ] start
+				 * [tFileInputExcel_1 begin ] start
 				 */
 
-				ok_Hash.put("tFileInputDelimited_1", false);
-				start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+				ok_Hash.put("tFileInputExcel_1", false);
+				start_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
 
-				currentComponent = "tFileInputDelimited_1";
+				currentComponent = "tFileInputExcel_1";
 
-				int tos_count_tFileInputDelimited_1 = 0;
+				int tos_count_tFileInputExcel_1 = 0;
 
-				final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
+				final String decryptedPassword_tFileInputExcel_1 = routines.system.PasswordEncryptUtil
+						.decryptPassword("enc:routine.encryption.key.v1:YRDhVpe1W4qwOhDTqPGx3nZcxHfzAXjYpC2eFg==");
+				String password_tFileInputExcel_1 = decryptedPassword_tFileInputExcel_1;
+				if (password_tFileInputExcel_1.isEmpty()) {
+					password_tFileInputExcel_1 = null;
+				}
+				class RegexUtil_tFileInputExcel_1 {
 
-				int nb_line_tFileInputDelimited_1 = 0;
-				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_1 = null;
-				int limit_tFileInputDelimited_1 = -1;
+					public java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> getSheets(
+							org.apache.poi.xssf.usermodel.XSSFWorkbook workbook, String oneSheetName,
+							boolean useRegex) {
+
+						java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> list = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+
+						if (useRegex) {// this part process the regex issue
+
+							java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(oneSheetName);
+							for (org.apache.poi.ss.usermodel.Sheet sheet : workbook) {
+								String sheetName = sheet.getSheetName();
+								java.util.regex.Matcher matcher = pattern.matcher(sheetName);
+								if (matcher.matches()) {
+									if (sheet != null) {
+										list.add((org.apache.poi.xssf.usermodel.XSSFSheet) sheet);
+									}
+								}
+							}
+
+						} else {
+							org.apache.poi.xssf.usermodel.XSSFSheet sheet = (org.apache.poi.xssf.usermodel.XSSFSheet) workbook
+									.getSheet(oneSheetName);
+							if (sheet != null) {
+								list.add(sheet);
+							}
+
+						}
+
+						return list;
+					}
+
+					public java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> getSheets(
+							org.apache.poi.xssf.usermodel.XSSFWorkbook workbook, int index, boolean useRegex) {
+						java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> list = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+						org.apache.poi.xssf.usermodel.XSSFSheet sheet = (org.apache.poi.xssf.usermodel.XSSFSheet) workbook
+								.getSheetAt(index);
+						if (sheet != null) {
+							list.add(sheet);
+						}
+						return list;
+					}
+
+				}
+				RegexUtil_tFileInputExcel_1 regexUtil_tFileInputExcel_1 = new RegexUtil_tFileInputExcel_1();
+
+				Object source_tFileInputExcel_1 = "C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Caracteristiques.xlsx";
+				org.apache.poi.xssf.usermodel.XSSFWorkbook workbook_tFileInputExcel_1 = null;
+
+				if (source_tFileInputExcel_1 instanceof String) {
+					workbook_tFileInputExcel_1 = (org.apache.poi.xssf.usermodel.XSSFWorkbook) org.apache.poi.ss.usermodel.WorkbookFactory
+							.create(new java.io.File((String) source_tFileInputExcel_1), password_tFileInputExcel_1);
+				} else if (source_tFileInputExcel_1 instanceof java.io.InputStream) {
+					workbook_tFileInputExcel_1 = (org.apache.poi.xssf.usermodel.XSSFWorkbook) org.apache.poi.ss.usermodel.WorkbookFactory
+							.create((java.io.InputStream) source_tFileInputExcel_1, password_tFileInputExcel_1);
+				} else {
+					workbook_tFileInputExcel_1 = null;
+					throw new java.lang.Exception("The data source should be specified as Inputstream or File Path!");
+				}
 				try {
 
-					Object filename_tFileInputDelimited_1 = "C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Caracteristiques.csv";
-					if (filename_tFileInputDelimited_1 instanceof java.io.InputStream) {
-
-						int footer_value_tFileInputDelimited_1 = 0, random_value_tFileInputDelimited_1 = -1;
-						if (footer_value_tFileInputDelimited_1 > 0 || random_value_tFileInputDelimited_1 > 0) {
-							throw new java.lang.Exception(
-									"When the input source is a stream,footer and random shouldn't be bigger than 0.");
-						}
-
+					java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> sheetList_tFileInputExcel_1 = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+					for (org.apache.poi.ss.usermodel.Sheet sheet_tFileInputExcel_1 : workbook_tFileInputExcel_1) {
+						sheetList_tFileInputExcel_1
+								.add((org.apache.poi.xssf.usermodel.XSSFSheet) sheet_tFileInputExcel_1);
 					}
-					try {
-						fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited(
-								"C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Caracteristiques.csv",
-								"UTF-8", ",", "\n", false, 1, 0, limit_tFileInputDelimited_1, -1, false);
-					} catch (java.lang.Exception e) {
-
-						System.err.println(e.getMessage());
-
+					if (sheetList_tFileInputExcel_1.size() <= 0) {
+						throw new RuntimeException("Special sheets not exist!");
 					}
 
-					while (fid_tFileInputDelimited_1 != null && fid_tFileInputDelimited_1.nextRecord()) {
-						rowstate_tFileInputDelimited_1.reset();
-
-						caracteristiques = null;
-
-						boolean whetherReject_tFileInputDelimited_1 = false;
-						caracteristiques = new caracteristiquesStruct();
-						try {
-
-							int columnIndexWithD_tFileInputDelimited_1 = 0;
-
-							String temp = "";
-
-							columnIndexWithD_tFileInputDelimited_1 = 0;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.Num_Acc = ParserUtils.parseTo_Long(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"Num_Acc", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.Num_Acc = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 1;
-
-							caracteristiques.an = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 2;
-
-							caracteristiques.mois = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 3;
-
-							caracteristiques.jour = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 4;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.hrmn = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"hrmn", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.hrmn = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 5;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.lum = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"lum", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.lum = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 6;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.agg = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"agg", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.agg = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 7;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.Column7 = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"Column7", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.Column7 = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 8;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.atm = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"atm", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.atm = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 9;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.col = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"col", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.col = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 10;
-
-							caracteristiques.Column10 = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 11;
-
-							caracteristiques.adr = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 12;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.gps = ParserUtils.parseTo_Character(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"gps", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.gps = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 13;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									caracteristiques.lat = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"lat", "caracteristiques", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								caracteristiques.lat = null;
-
-							}
-
-							columnIndexWithD_tFileInputDelimited_1 = 14;
-
-							caracteristiques.Column14 = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 15;
-
-							caracteristiques.dep = fid_tFileInputDelimited_1
-									.get(columnIndexWithD_tFileInputDelimited_1);
-
-							if (rowstate_tFileInputDelimited_1.getException() != null) {
-								throw rowstate_tFileInputDelimited_1.getException();
-							}
-
-						} catch (java.lang.Exception e) {
-							whetherReject_tFileInputDelimited_1 = true;
-
-							System.err.println(e.getMessage());
-							caracteristiques = null;
-
+					java.util.List<org.apache.poi.xssf.usermodel.XSSFSheet> sheetList_FilterNull_tFileInputExcel_1 = new java.util.ArrayList<org.apache.poi.xssf.usermodel.XSSFSheet>();
+					for (org.apache.poi.xssf.usermodel.XSSFSheet sheet_FilterNull_tFileInputExcel_1 : sheetList_tFileInputExcel_1) {
+						if (sheet_FilterNull_tFileInputExcel_1 != null
+								&& sheetList_FilterNull_tFileInputExcel_1.iterator() != null
+								&& sheet_FilterNull_tFileInputExcel_1.iterator().hasNext()) {
+							sheetList_FilterNull_tFileInputExcel_1.add(sheet_FilterNull_tFileInputExcel_1);
 						}
+					}
+					sheetList_tFileInputExcel_1 = sheetList_FilterNull_tFileInputExcel_1;
+					if (sheetList_tFileInputExcel_1.size() > 0) {
+						int nb_line_tFileInputExcel_1 = 0;
 
-						/**
-						 * [tFileInputDelimited_1 begin ] stop
-						 */
+						int begin_line_tFileInputExcel_1 = 1;
 
-						/**
-						 * [tFileInputDelimited_1 main ] start
-						 */
+						int footer_input_tFileInputExcel_1 = 0;
 
-						currentComponent = "tFileInputDelimited_1";
+						int end_line_tFileInputExcel_1 = 0;
+						for (org.apache.poi.xssf.usermodel.XSSFSheet sheet_tFileInputExcel_1 : sheetList_tFileInputExcel_1) {
+							end_line_tFileInputExcel_1 += (sheet_tFileInputExcel_1.getLastRowNum() + 1);
+						}
+						end_line_tFileInputExcel_1 -= footer_input_tFileInputExcel_1;
+						int limit_tFileInputExcel_1 = -1;
+						int start_column_tFileInputExcel_1 = 1 - 1;
+						int end_column_tFileInputExcel_1 = -1;
 
-						tos_count_tFileInputDelimited_1++;
+						org.apache.poi.xssf.usermodel.XSSFRow row_tFileInputExcel_1 = null;
+						org.apache.poi.xssf.usermodel.XSSFSheet sheet_tFileInputExcel_1 = sheetList_tFileInputExcel_1
+								.get(0);
+						int rowCount_tFileInputExcel_1 = 0;
+						int sheetIndex_tFileInputExcel_1 = 0;
+						int currentRows_tFileInputExcel_1 = (sheetList_tFileInputExcel_1.get(0).getLastRowNum() + 1);
 
-						/**
-						 * [tFileInputDelimited_1 main ] stop
-						 */
+						// for the number format
+						java.text.DecimalFormat df_tFileInputExcel_1 = new java.text.DecimalFormat(
+								"#.####################################");
+						char decimalChar_tFileInputExcel_1 = df_tFileInputExcel_1.getDecimalFormatSymbols()
+								.getDecimalSeparator();
 
-						/**
-						 * [tFileInputDelimited_1 process_data_begin ] start
-						 */
+						for (int i_tFileInputExcel_1 = begin_line_tFileInputExcel_1; i_tFileInputExcel_1 < end_line_tFileInputExcel_1; i_tFileInputExcel_1++) {
 
-						currentComponent = "tFileInputDelimited_1";
+							int emptyColumnCount_tFileInputExcel_1 = 0;
 
-						/**
-						 * [tFileInputDelimited_1 process_data_begin ] stop
-						 */
-// Start of branch "caracteristiques"
-						if (caracteristiques != null) {
-
-							/**
-							 * [tUniqRow_1 main ] start
-							 */
-
-							currentComponent = "tUniqRow_1";
-
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1, "caracteristiques");
+							if (limit_tFileInputExcel_1 != -1 && nb_line_tFileInputExcel_1 >= limit_tFileInputExcel_1) {
+								break;
 							}
 
-							caracteristiques_U = null;
-							finder_tUniqRow_1.Num_Acc = caracteristiques.Num_Acc;
-							finder_tUniqRow_1.hashCodeDirty = true;
-							if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
-								KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
+							while (i_tFileInputExcel_1 >= rowCount_tFileInputExcel_1 + currentRows_tFileInputExcel_1) {
+								rowCount_tFileInputExcel_1 += currentRows_tFileInputExcel_1;
+								sheet_tFileInputExcel_1 = sheetList_tFileInputExcel_1
+										.get(++sheetIndex_tFileInputExcel_1);
+								currentRows_tFileInputExcel_1 = (sheet_tFileInputExcel_1.getLastRowNum() + 1);
+							}
+							globalMap.put("tFileInputExcel_1_CURRENT_SHEET", sheet_tFileInputExcel_1.getSheetName());
+							if (rowCount_tFileInputExcel_1 <= i_tFileInputExcel_1) {
+								row_tFileInputExcel_1 = sheet_tFileInputExcel_1
+										.getRow(i_tFileInputExcel_1 - rowCount_tFileInputExcel_1);
+							}
+							row1 = null;
+							int tempRowLength_tFileInputExcel_1 = 16;
 
-								new_tUniqRow_1.Num_Acc = caracteristiques.Num_Acc;
+							int columnIndex_tFileInputExcel_1 = 0;
 
-								keystUniqRow_1.add(new_tUniqRow_1);
-								if (caracteristiques_U == null) {
-
-									caracteristiques_U = new caracteristiques_UStruct();
-								}
-								caracteristiques_U.Num_Acc = caracteristiques.Num_Acc;
-								caracteristiques_U.an = caracteristiques.an;
-								caracteristiques_U.mois = caracteristiques.mois;
-								caracteristiques_U.jour = caracteristiques.jour;
-								caracteristiques_U.hrmn = caracteristiques.hrmn;
-								caracteristiques_U.lum = caracteristiques.lum;
-								caracteristiques_U.agg = caracteristiques.agg;
-								caracteristiques_U.Column7 = caracteristiques.Column7;
-								caracteristiques_U.atm = caracteristiques.atm;
-								caracteristiques_U.col = caracteristiques.col;
-								caracteristiques_U.Column10 = caracteristiques.Column10;
-								caracteristiques_U.adr = caracteristiques.adr;
-								caracteristiques_U.gps = caracteristiques.gps;
-								caracteristiques_U.lat = caracteristiques.lat;
-								caracteristiques_U.Column14 = caracteristiques.Column14;
-								caracteristiques_U.dep = caracteristiques.dep;
-								nb_uniques_tUniqRow_1++;
+							String[] temp_row_tFileInputExcel_1 = new String[tempRowLength_tFileInputExcel_1];
+							int excel_end_column_tFileInputExcel_1;
+							if (row_tFileInputExcel_1 == null) {
+								excel_end_column_tFileInputExcel_1 = 0;
 							} else {
-								nb_duplicates_tUniqRow_1++;
+								excel_end_column_tFileInputExcel_1 = row_tFileInputExcel_1.getLastCellNum();
+							}
+							int actual_end_column_tFileInputExcel_1;
+							if (end_column_tFileInputExcel_1 == -1) {
+								actual_end_column_tFileInputExcel_1 = excel_end_column_tFileInputExcel_1;
+							} else {
+								actual_end_column_tFileInputExcel_1 = end_column_tFileInputExcel_1 > excel_end_column_tFileInputExcel_1
+										? excel_end_column_tFileInputExcel_1
+										: end_column_tFileInputExcel_1;
+							}
+							org.apache.poi.ss.formula.eval.NumberEval ne_tFileInputExcel_1 = null;
+							for (int i = 0; i < tempRowLength_tFileInputExcel_1; i++) {
+								if (i + start_column_tFileInputExcel_1 < actual_end_column_tFileInputExcel_1) {
+									org.apache.poi.ss.usermodel.Cell cell_tFileInputExcel_1 = row_tFileInputExcel_1
+											.getCell(i + start_column_tFileInputExcel_1);
+									if (cell_tFileInputExcel_1 != null) {
+										switch (cell_tFileInputExcel_1.getCellType()) {
+										case STRING:
+											temp_row_tFileInputExcel_1[i] = cell_tFileInputExcel_1
+													.getRichStringCellValue().getString();
+											break;
+										case NUMERIC:
+											if (org.apache.poi.ss.usermodel.DateUtil
+													.isCellDateFormatted(cell_tFileInputExcel_1)) {
+												temp_row_tFileInputExcel_1[i] = cell_tFileInputExcel_1
+														.getDateCellValue().toString();
+											} else {
+												temp_row_tFileInputExcel_1[i] = df_tFileInputExcel_1
+														.format(cell_tFileInputExcel_1.getNumericCellValue());
+											}
+											break;
+										case BOOLEAN:
+											temp_row_tFileInputExcel_1[i] = String
+													.valueOf(cell_tFileInputExcel_1.getBooleanCellValue());
+											break;
+										case FORMULA:
+											switch (cell_tFileInputExcel_1.getCachedFormulaResultType()) {
+											case STRING:
+												temp_row_tFileInputExcel_1[i] = cell_tFileInputExcel_1
+														.getRichStringCellValue().getString();
+												break;
+											case NUMERIC:
+												if (org.apache.poi.ss.usermodel.DateUtil
+														.isCellDateFormatted(cell_tFileInputExcel_1)) {
+													temp_row_tFileInputExcel_1[i] = cell_tFileInputExcel_1
+															.getDateCellValue().toString();
+												} else {
+													ne_tFileInputExcel_1 = new org.apache.poi.ss.formula.eval.NumberEval(
+															cell_tFileInputExcel_1.getNumericCellValue());
+													temp_row_tFileInputExcel_1[i] = ne_tFileInputExcel_1
+															.getStringValue();
+												}
+												break;
+											case BOOLEAN:
+												temp_row_tFileInputExcel_1[i] = String
+														.valueOf(cell_tFileInputExcel_1.getBooleanCellValue());
+												break;
+											default:
+												temp_row_tFileInputExcel_1[i] = "";
+											}
+											break;
+										default:
+											temp_row_tFileInputExcel_1[i] = "";
+										}
+									} else {
+										temp_row_tFileInputExcel_1[i] = "";
+									}
+
+								} else {
+									temp_row_tFileInputExcel_1[i] = "";
+								}
+							}
+							boolean whetherReject_tFileInputExcel_1 = false;
+							row1 = new row1Struct();
+							int curColNum_tFileInputExcel_1 = -1;
+							String curColName_tFileInputExcel_1 = "";
+							try {
+								columnIndex_tFileInputExcel_1 = 0;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "Num_Acc";
+
+									row1.Num_Acc = ParserUtils.parseTo_Long(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.Num_Acc = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 1;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "an";
+
+									row1.an = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.an = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 2;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "mois";
+
+									row1.mois = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.mois = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 3;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "jour";
+
+									row1.jour = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.jour = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 4;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "hrmn";
+
+									row1.hrmn = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.hrmn = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 5;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "lum";
+
+									row1.lum = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.lum = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 6;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "loc";
+
+									row1.loc = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.loc = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 7;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "Int";
+
+									row1.Int = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.Int = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 8;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "atm";
+
+									row1.atm = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.atm = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 9;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "col";
+
+									row1.col = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.col = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 10;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "com";
+
+									row1.com = ParserUtils.parseTo_Integer(ParserUtils.parseTo_Number(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1], null,
+											'.' == decimalChar_tFileInputExcel_1 ? null
+													: decimalChar_tFileInputExcel_1));
+								} else {
+									row1.com = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 11;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "adr";
+
+									row1.adr = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								} else {
+									row1.adr = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 12;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "gps";
+
+									row1.gps = ParserUtils.parseTo_Character(
+											temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1]);
+								} else {
+									row1.gps = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 13;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "lat";
+
+									row1.lat = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								} else {
+									row1.lat = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 14;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "Long";
+
+									row1.Long = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								} else {
+									row1.Long = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+								columnIndex_tFileInputExcel_1 = 15;
+
+								if (temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1].length() > 0) {
+									curColNum_tFileInputExcel_1 = columnIndex_tFileInputExcel_1
+											+ start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "dep";
+
+									row1.dep = temp_row_tFileInputExcel_1[columnIndex_tFileInputExcel_1];
+								} else {
+									row1.dep = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+
+								nb_line_tFileInputExcel_1++;
+
+							} catch (java.lang.Exception e) {
+								whetherReject_tFileInputExcel_1 = true;
+								System.err.println(e.getMessage());
+								row1 = null;
 							}
 
-							tos_count_tUniqRow_1++;
-
 							/**
-							 * [tUniqRow_1 main ] stop
+							 * [tFileInputExcel_1 begin ] stop
 							 */
 
 							/**
-							 * [tUniqRow_1 process_data_begin ] start
+							 * [tFileInputExcel_1 main ] start
 							 */
 
-							currentComponent = "tUniqRow_1";
+							currentComponent = "tFileInputExcel_1";
+
+							tos_count_tFileInputExcel_1++;
 
 							/**
-							 * [tUniqRow_1 process_data_begin ] stop
+							 * [tFileInputExcel_1 main ] stop
 							 */
-// Start of branch "caracteristiques_U"
-							if (caracteristiques_U != null) {
+
+							/**
+							 * [tFileInputExcel_1 process_data_begin ] start
+							 */
+
+							currentComponent = "tFileInputExcel_1";
+
+							/**
+							 * [tFileInputExcel_1 process_data_begin ] stop
+							 */
+// Start of branch "row1"
+							if (row1 != null) {
 
 								/**
-								 * [tMap_1 main ] start
+								 * [tUniqRow_1 main ] start
 								 */
 
-								currentComponent = "tMap_1";
+								currentComponent = "tUniqRow_1";
 
 								if (execStat) {
-									runStat.updateStatOnConnection(iterateId, 1, 1, "caracteristiques_U");
+									runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
 								}
 
-								boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+								caracteristiques_U = null;
+								finder_tUniqRow_1.Num_Acc = row1.Num_Acc;
+								finder_tUniqRow_1.hashCodeDirty = true;
+								if (!keystUniqRow_1.contains(finder_tUniqRow_1)) {
+									KeyStruct_tUniqRow_1 new_tUniqRow_1 = new KeyStruct_tUniqRow_1();
 
-								// ###############################
-								// # Input tables (lookups)
-								boolean rejectedInnerJoin_tMap_1 = false;
-								boolean mainRowRejected_tMap_1 = false;
+									new_tUniqRow_1.Num_Acc = row1.Num_Acc;
 
-								// ###############################
-								{ // start of Var scope
+									keystUniqRow_1.add(new_tUniqRow_1);
+									if (caracteristiques_U == null) {
 
-									// ###############################
-									// # Vars tables
+										caracteristiques_U = new caracteristiques_UStruct();
+									}
+									caracteristiques_U.Num_Acc = row1.Num_Acc;
+									caracteristiques_U.an = row1.an;
+									caracteristiques_U.mois = row1.mois;
+									caracteristiques_U.jour = row1.jour;
+									caracteristiques_U.hrmn = row1.hrmn;
+									caracteristiques_U.lum = row1.lum;
+									caracteristiques_U.loc = row1.loc;
+									caracteristiques_U.Int = row1.Int;
+									caracteristiques_U.atm = row1.atm;
+									caracteristiques_U.col = row1.col;
+									caracteristiques_U.com = row1.com;
+									caracteristiques_U.adr = row1.adr;
+									caracteristiques_U.gps = row1.gps;
+									caracteristiques_U.lat = row1.lat;
+									caracteristiques_U.Long = row1.Long;
+									caracteristiques_U.dep = row1.dep;
+									nb_uniques_tUniqRow_1++;
+								} else {
+									nb_duplicates_tUniqRow_1++;
+								}
 
-									Var__tMap_1__Struct Var = Var__tMap_1;
-									Var.mois = String.format("%1$2s", caracteristiques_U.mois).replace(' ', '0');
-									Var.jour = String.format("%1$2s", caracteristiques_U.jour).replace(' ', '0');
-									Var.dep = StringHandling.RIGHT(caracteristiques_U.dep, 1).equals("0")
-											? StringHandling.LEFT(caracteristiques_U.dep, 2)
-											: StringHandling.RIGHT(caracteristiques_U.dep, 2).equals("01")
-													? StringHandling.LEFT(caracteristiques_U.dep, 1) + "A"
-													: StringHandling.RIGHT(caracteristiques_U.dep, 2).equals("02")
-															? StringHandling.LEFT(caracteristiques_U.dep, 1) + "B"
-															: caracteristiques_U.dep;// ###############################
-									// ###############################
-									// # Output tables
-
-									P_DIM_caracteristiques = null;
-
-// # Output table : 'P_DIM_caracteristiques'
-									P_DIM_caracteristiques_tmp.Num_Acc = caracteristiques_U.Num_Acc;
-									P_DIM_caracteristiques_tmp.id_Date = "20" + "" + caracteristiques_U.an + ""
-											+ Var.mois + "" + Var.jour;
-									P_DIM_caracteristiques_tmp.loc = caracteristiques_U.agg;
-									P_DIM_caracteristiques_tmp.atm = caracteristiques_U.atm;
-									P_DIM_caracteristiques_tmp.col = caracteristiques_U.col;
-									P_DIM_caracteristiques_tmp.dep = Var.dep;
-									P_DIM_caracteristiques = P_DIM_caracteristiques_tmp;
-// ###############################
-
-								} // end of Var scope
-
-								rejectedInnerJoin_tMap_1 = false;
-
-								tos_count_tMap_1++;
+								tos_count_tUniqRow_1++;
 
 								/**
-								 * [tMap_1 main ] stop
+								 * [tUniqRow_1 main ] stop
 								 */
 
 								/**
-								 * [tMap_1 process_data_begin ] start
+								 * [tUniqRow_1 process_data_begin ] start
 								 */
 
-								currentComponent = "tMap_1";
+								currentComponent = "tUniqRow_1";
 
 								/**
-								 * [tMap_1 process_data_begin ] stop
+								 * [tUniqRow_1 process_data_begin ] stop
 								 */
-// Start of branch "P_DIM_caracteristiques"
-								if (P_DIM_caracteristiques != null) {
+// Start of branch "caracteristiques_U"
+								if (caracteristiques_U != null) {
 
 									/**
-									 * [tFileOutputDelimited_1 main ] start
+									 * [tMap_1 main ] start
 									 */
 
-									currentComponent = "tFileOutputDelimited_1";
+									currentComponent = "tMap_1";
 
 									if (execStat) {
-										runStat.updateStatOnConnection(iterateId, 1, 1, "P_DIM_caracteristiques");
+										runStat.updateStatOnConnection(iterateId, 1, 1, "caracteristiques_U");
 									}
 
-									StringBuilder sb_tFileOutputDelimited_1 = new StringBuilder();
-									if (P_DIM_caracteristiques.Num_Acc != null) {
-										sb_tFileOutputDelimited_1.append(P_DIM_caracteristiques.Num_Acc);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (P_DIM_caracteristiques.id_Date != null) {
-										sb_tFileOutputDelimited_1.append(P_DIM_caracteristiques.id_Date);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (P_DIM_caracteristiques.loc != null) {
-										sb_tFileOutputDelimited_1.append(P_DIM_caracteristiques.loc);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (P_DIM_caracteristiques.atm != null) {
-										sb_tFileOutputDelimited_1.append(P_DIM_caracteristiques.atm);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (P_DIM_caracteristiques.col != null) {
-										sb_tFileOutputDelimited_1.append(P_DIM_caracteristiques.col);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (P_DIM_caracteristiques.dep != null) {
-										sb_tFileOutputDelimited_1.append(P_DIM_caracteristiques.dep);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
+									boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-									nb_line_tFileOutputDelimited_1++;
-									resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
+									// ###############################
+									// # Input tables (lookups)
+									boolean rejectedInnerJoin_tMap_1 = false;
+									boolean mainRowRejected_tMap_1 = false;
 
-									outtFileOutputDelimited_1.write(sb_tFileOutputDelimited_1.toString());
+									// ###############################
+									{ // start of Var scope
 
-									tos_count_tFileOutputDelimited_1++;
+										// ###############################
+										// # Vars tables
+
+										Var__tMap_1__Struct Var = Var__tMap_1;
+										Var.mois = String.format("%1$2s", caracteristiques_U.mois).replace(' ', '0');
+										Var.jour = String.format("%1$2s", caracteristiques_U.jour).replace(' ', '0');
+										Var.dep = StringHandling.LEN(caracteristiques_U.dep) == 2
+												&& StringHandling.RIGHT(caracteristiques_U.dep, 1).equals("0")
+														? StringHandling.LEFT(caracteristiques_U.dep, 1)
+														: StringHandling.LEN(caracteristiques_U.dep) == 3
+																&& StringHandling.RIGHT(caracteristiques_U.dep, 1)
+																		.equals("0")
+																				? StringHandling
+																						.LEFT(caracteristiques_U.dep, 2)
+																				: StringHandling
+																						.RIGHT(caracteristiques_U.dep,
+																								2)
+																						.equals("01")
+																								? StringHandling.LEFT(
+																										caracteristiques_U.dep,
+																										1) + "A"
+																								: StringHandling.RIGHT(
+																										caracteristiques_U.dep,
+																										2).equals(
+																												"02") ? StringHandling.LEFT(caracteristiques_U.dep, 1) + "B" : caracteristiques_U.dep;// ###############################
+										// ###############################
+										// # Output tables
+
+										P_DIM_caracteristiques = null;
+
+// # Output table : 'P_DIM_caracteristiques'
+										P_DIM_caracteristiques_tmp.Num_Acc = caracteristiques_U.Num_Acc;
+										P_DIM_caracteristiques_tmp.id_Date = "20" + "" + caracteristiques_U.an + ""
+												+ Var.mois + "" + Var.jour;
+										P_DIM_caracteristiques_tmp.loc = caracteristiques_U.loc;
+										P_DIM_caracteristiques_tmp.atm = caracteristiques_U.atm;
+										P_DIM_caracteristiques_tmp.col = caracteristiques_U.col;
+										P_DIM_caracteristiques_tmp.dep = Var.dep;
+										P_DIM_caracteristiques = P_DIM_caracteristiques_tmp;
+// ###############################
+
+									} // end of Var scope
+
+									rejectedInnerJoin_tMap_1 = false;
+
+									tos_count_tMap_1++;
 
 									/**
-									 * [tFileOutputDelimited_1 main ] stop
+									 * [tMap_1 main ] stop
 									 */
 
 									/**
-									 * [tFileOutputDelimited_1 process_data_begin ] start
+									 * [tMap_1 process_data_begin ] start
 									 */
 
-									currentComponent = "tFileOutputDelimited_1";
+									currentComponent = "tMap_1";
 
 									/**
-									 * [tFileOutputDelimited_1 process_data_begin ] stop
+									 * [tMap_1 process_data_begin ] stop
 									 */
+// Start of branch "P_DIM_caracteristiques"
+									if (P_DIM_caracteristiques != null) {
+
+										/**
+										 * [tMap_2 main ] start
+										 */
+
+										currentComponent = "tMap_2";
+
+										if (execStat) {
+											runStat.updateStatOnConnection(iterateId, 1, 1, "P_DIM_caracteristiques");
+										}
+
+										boolean hasCasePrimitiveKeyWithNull_tMap_2 = false;
+
+										// ###############################
+										// # Input tables (lookups)
+										boolean rejectedInnerJoin_tMap_2 = false;
+										boolean mainRowRejected_tMap_2 = false;
+
+										// ###############################
+										{ // start of Var scope
+
+											// ###############################
+											// # Vars tables
+
+											Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
+											// ###############################
+											// # Output tables
+
+											caracteristiques = null;
+
+// # Output table : 'caracteristiques'
+											caracteristiques_tmp.Num_Acc = P_DIM_caracteristiques.Num_Acc;
+											caracteristiques_tmp.id_Date = P_DIM_caracteristiques.id_Date;
+											caracteristiques_tmp.loc = P_DIM_caracteristiques.loc;
+											caracteristiques_tmp.atm = P_DIM_caracteristiques.atm;
+											caracteristiques_tmp.col = P_DIM_caracteristiques.col;
+											caracteristiques_tmp.dep = StringHandling
+													.LEN(P_DIM_caracteristiques.dep) == 1
+															? "0" + P_DIM_caracteristiques.dep
+															: P_DIM_caracteristiques.dep;
+											caracteristiques = caracteristiques_tmp;
+// ###############################
+
+										} // end of Var scope
+
+										rejectedInnerJoin_tMap_2 = false;
+
+										tos_count_tMap_2++;
+
+										/**
+										 * [tMap_2 main ] stop
+										 */
+
+										/**
+										 * [tMap_2 process_data_begin ] start
+										 */
+
+										currentComponent = "tMap_2";
+
+										/**
+										 * [tMap_2 process_data_begin ] stop
+										 */
+// Start of branch "caracteristiques"
+										if (caracteristiques != null) {
+
+											/**
+											 * [tFileOutputDelimited_1 main ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_1";
+
+											if (execStat) {
+												runStat.updateStatOnConnection(iterateId, 1, 1, "caracteristiques");
+											}
+
+											StringBuilder sb_tFileOutputDelimited_1 = new StringBuilder();
+											if (caracteristiques.Num_Acc != null) {
+												sb_tFileOutputDelimited_1.append(caracteristiques.Num_Acc);
+											}
+											sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+											if (caracteristiques.id_Date != null) {
+												sb_tFileOutputDelimited_1.append(caracteristiques.id_Date);
+											}
+											sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+											if (caracteristiques.loc != null) {
+												sb_tFileOutputDelimited_1.append(caracteristiques.loc);
+											}
+											sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+											if (caracteristiques.atm != null) {
+												sb_tFileOutputDelimited_1.append(caracteristiques.atm);
+											}
+											sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+											if (caracteristiques.col != null) {
+												sb_tFileOutputDelimited_1.append(caracteristiques.col);
+											}
+											sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+											if (caracteristiques.dep != null) {
+												sb_tFileOutputDelimited_1.append(caracteristiques.dep);
+											}
+											sb_tFileOutputDelimited_1.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
+
+											nb_line_tFileOutputDelimited_1++;
+											resourceMap.put("nb_line_tFileOutputDelimited_1",
+													nb_line_tFileOutputDelimited_1);
+
+											outtFileOutputDelimited_1.write(sb_tFileOutputDelimited_1.toString());
+
+											tos_count_tFileOutputDelimited_1++;
+
+											/**
+											 * [tFileOutputDelimited_1 main ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_1 process_data_begin ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_1";
+
+											/**
+											 * [tFileOutputDelimited_1 process_data_begin ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_1 process_data_end ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_1";
+
+											/**
+											 * [tFileOutputDelimited_1 process_data_end ] stop
+											 */
+
+										} // End of branch "caracteristiques"
+
+										/**
+										 * [tMap_2 process_data_end ] start
+										 */
+
+										currentComponent = "tMap_2";
+
+										/**
+										 * [tMap_2 process_data_end ] stop
+										 */
+
+									} // End of branch "P_DIM_caracteristiques"
 
 									/**
-									 * [tFileOutputDelimited_1 process_data_end ] start
+									 * [tMap_1 process_data_end ] start
 									 */
 
-									currentComponent = "tFileOutputDelimited_1";
+									currentComponent = "tMap_1";
 
 									/**
-									 * [tFileOutputDelimited_1 process_data_end ] stop
+									 * [tMap_1 process_data_end ] stop
 									 */
 
-								} // End of branch "P_DIM_caracteristiques"
+								} // End of branch "caracteristiques_U"
 
 								/**
-								 * [tMap_1 process_data_end ] start
+								 * [tUniqRow_1 process_data_end ] start
 								 */
 
-								currentComponent = "tMap_1";
+								currentComponent = "tUniqRow_1";
 
 								/**
-								 * [tMap_1 process_data_end ] stop
+								 * [tUniqRow_1 process_data_end ] stop
 								 */
 
-							} // End of branch "caracteristiques_U"
+							} // End of branch "row1"
 
 							/**
-							 * [tUniqRow_1 process_data_end ] start
+							 * [tFileInputExcel_1 process_data_end ] start
 							 */
 
-							currentComponent = "tUniqRow_1";
+							currentComponent = "tFileInputExcel_1";
 
 							/**
-							 * [tUniqRow_1 process_data_end ] stop
+							 * [tFileInputExcel_1 process_data_end ] stop
 							 */
 
-						} // End of branch "caracteristiques"
+							/**
+							 * [tFileInputExcel_1 end ] start
+							 */
 
-						/**
-						 * [tFileInputDelimited_1 process_data_end ] start
-						 */
+							currentComponent = "tFileInputExcel_1";
 
-						currentComponent = "tFileInputDelimited_1";
-
-						/**
-						 * [tFileInputDelimited_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_1 end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-					}
-				} finally {
-					if (!((Object) ("C:/Users/DIGINAMIC/Desktop/projet fin de formation/Projet_Accidents/Jeu de donnees/Donnees/Caracteristiques.csv") instanceof java.io.InputStream)) {
-						if (fid_tFileInputDelimited_1 != null) {
-							fid_tFileInputDelimited_1.close();
 						}
-					}
-					if (fid_tFileInputDelimited_1 != null) {
-						globalMap.put("tFileInputDelimited_1_NB_LINE", fid_tFileInputDelimited_1.getRowNumber());
+
+						globalMap.put("tFileInputExcel_1_NB_LINE", nb_line_tFileInputExcel_1);
 
 					}
+
+				} finally {
+
+					if (!(source_tFileInputExcel_1 instanceof java.io.InputStream)) {
+						workbook_tFileInputExcel_1.getPackage().revert();
+					}
+
 				}
 
-				ok_Hash.put("tFileInputDelimited_1", true);
-				end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+				ok_Hash.put("tFileInputExcel_1", true);
+				end_Hash.put("tFileInputExcel_1", System.currentTimeMillis());
 
 				/**
-				 * [tFileInputDelimited_1 end ] stop
+				 * [tFileInputExcel_1 end ] stop
 				 */
 
 				/**
@@ -2196,7 +2718,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				globalMap.put("tUniqRow_1_NB_DUPLICATES", nb_duplicates_tUniqRow_1);
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "caracteristiques");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
 				}
 
 				ok_Hash.put("tUniqRow_1", true);
@@ -2228,6 +2750,27 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				 */
 
 				/**
+				 * [tMap_2 end ] start
+				 */
+
+				currentComponent = "tMap_2";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "P_DIM_caracteristiques");
+				}
+
+				ok_Hash.put("tMap_2", true);
+				end_Hash.put("tMap_2", System.currentTimeMillis());
+
+				/**
+				 * [tMap_2 end ] stop
+				 */
+
+				/**
 				 * [tFileOutputDelimited_1 end ] start
 				 */
 
@@ -2244,7 +2787,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 				resourceMap.put("finish_tFileOutputDelimited_1", true);
 
 				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "P_DIM_caracteristiques");
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "caracteristiques");
 				}
 
 				ok_Hash.put("tFileOutputDelimited_1", true);
@@ -2271,13 +2814,13 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			try {
 
 				/**
-				 * [tFileInputDelimited_1 finally ] start
+				 * [tFileInputExcel_1 finally ] start
 				 */
 
-				currentComponent = "tFileInputDelimited_1";
+				currentComponent = "tFileInputExcel_1";
 
 				/**
-				 * [tFileInputDelimited_1 finally ] stop
+				 * [tFileInputExcel_1 finally ] stop
 				 */
 
 				/**
@@ -2298,6 +2841,16 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 				/**
 				 * [tMap_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_2 finally ] start
+				 */
+
+				currentComponent = "tMap_2";
+
+				/**
+				 * [tMap_2 finally ] stop
 				 */
 
 				/**
@@ -2329,7 +2882,7 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 			resourceMap = null;
 		}
 
-		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 1);
+		globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", 1);
 	}
 
 	public String resuming_logs_dir_path = null;
@@ -2526,14 +3079,14 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 
 		try {
 			errorCode = null;
-			tFileInputDelimited_1Process(globalMap);
+			tFileInputExcel_1Process(globalMap);
 			if (!"failure".equals(status)) {
 				status = "end";
 			}
-		} catch (TalendException e_tFileInputDelimited_1) {
-			globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", -1);
+		} catch (TalendException e_tFileInputExcel_1) {
+			globalMap.put("tFileInputExcel_1_SUBPROCESS_STATE", -1);
 
-			e_tFileInputDelimited_1.printStackTrace();
+			e_tFileInputExcel_1.printStackTrace();
 
 		}
 
@@ -2688,6 +3241,6 @@ public class P_table_DIM_CARACTERISTIQUES implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 81738 characters generated by Talend Open Studio for Data Integration on the
- * 3 avril 2020 à 15:05:09 CEST
+ * 99438 characters generated by Talend Open Studio for Data Integration on the
+ * 6 avril 2020 à 15:18:59 CEST
  ************************************************************************************************/

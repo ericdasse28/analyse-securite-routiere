@@ -235,9 +235,10 @@
             <outputDirectory>lib</outputDirectory>
             <includes>
                 <include>org.talend.libraries:crypto-utils:jar:6.0.0-SNAPSHOT</include>
-                <include>org.talend.libraries:talend_file_enhanced_20070724:jar:6.0.0</include>
                 <include>org.example.accident_route.code:routines:jar:7.3.1</include>
+                <include>org.talend.libraries:geronimo-stax-api_1.0_spec-1.0.1:jar:6.0.0</include>
                 <include>org.talend.libraries:talendcsv:jar:6.0.0</include>
+                <include>org.talend.libraries:commons-collections4-4.1:jar:6.0.0</include>
             </includes>
             <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>false</useProjectArtifact>
@@ -246,9 +247,17 @@
             <outputDirectory>lib</outputDirectory>
             <includes>
                 <include>org.apache.logging.log4j:log4j-slf4j-impl:jar:2.12.1</include>
-                <include>org.slf4j:slf4j-api:jar:1.7.25</include>
+                <include>org.apache.commons:commons-compress:jar:1.19</include>
                 <include>org.dom4j:dom4j:jar:2.1.1</include>
+                <include>org.apache.poi:poi-ooxml:jar:4.1.0-20190523141255_modified_talend</include>
+                <include>org.apache.commons:commons-math3:jar:3.6.1</include>
+                <include>org.apache.xmlbeans:xmlbeans:jar:3.1.0</include>
+                <include>org.apache.poi:poi:jar:4.1.0-20190523141255_modified_talend</include>
+                <include>org.slf4j:slf4j-api:jar:1.7.25</include>
+                <include>org.apache.poi:poi-scratchpad:jar:4.1.0-20190523141255_modified_talend</include>
+                <include>org.apache.logging.log4j:log4j-1.2-api:jar:2.12.1</include>
                 <include>org.apache.logging.log4j:log4j-api:jar:2.12.1</include>
+                <include>org.apache.poi:poi-ooxml-schemas:jar:4.1.0-20190523141255_modified_talend</include>
                 <include>org.apache.logging.log4j:log4j-core:jar:2.12.1</include>
             </includes>
             <useProjectArtifact>false</useProjectArtifact>
